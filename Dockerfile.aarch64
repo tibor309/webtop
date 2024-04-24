@@ -2,6 +2,9 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-ubuntujammy
 
 # set labels
 LABEL maintainer="tibor309"
+LABEL org.opencontainers.image.description="Browser accessible Ubuntu Cinnamon desktop."
+LABEL org.opencontainers.image.source=https://github.com/tibor309/webtop
+LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # environment
 ENV TITLE="Ubuntu Cinnamon"
