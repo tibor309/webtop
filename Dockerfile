@@ -46,7 +46,7 @@ RUN \
     lxqt-archiver \
     featherpad \
     lximage-qt \
-    qlipper&& \
+    qlipper && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
