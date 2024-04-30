@@ -1,21 +1,15 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
 
 # set labels
-ARG BUILD_DATE
-ARG VERSION
-LABEL build_version="Linuxserver.io version: ${VERSION} Build-date: ${BUILD_DATE}"
 LABEL maintainer="tibor309"
-LABEL org.opencontainers.image.title=Webtop
-LABEL org.opencontainers.image.description=Lubuntu desktop accessible trough a web browser.
-LABEL org.opencontainers.image.source=https://github.com/tibor309/webtop
-LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
-LABEL org.opencontainers.image.licenses=GPL-3.0
 
-# environment
-ENV TITLE="Lubuntu"
+# title
+ENV TITLE="Ubuntu"
+
+# environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# prevent Ubuntu's firefox stub from being installed
+# prevent Ubuntu's firefox and thunderbird stub from being installed
 COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
 
 RUN \
@@ -25,28 +19,50 @@ RUN \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png && \
   echo "**** install packages ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
-  apt-get update -y && \
+  apt-get update && \
   apt-get install --no-install-recommends -y \
+    dbus-x11 \
+    fonts-ubuntu \
+    language-pack-en-base \
+    language-pack-gnome-en \
+    mesa-utils \
+    xdg-desktop-portal \
+    ubuntu-desktop \
+    ubuntu-settings \
+    ubuntu-keyring \
+    ubuntu-wallpapers \
+    ubuntu-docs \
+    gnome-desktop \
+    gnome-desktop3-data \
+    gnome-shell \
+    gnome-menus \
+    gnome-user-docs \
+    gnome-accessibility-themes \
+    gnome-themes-extra \
+    gnome-themes-extra-data \
+    yaru-theme-gnome-shell \
+    yaru-theme-gtk \
+    yaru-theme-icon \
+    yaru-theme-sound \
+    gnome-terminal \
+    nautilus-extension-gnome-terminal \
+    gnome-control-center \
+    gnome-online-accounts \
+    gnome-text-editor \
+    gnome-system-monitor \
+    totem \
+    gnome-calculator \
+    gnome-clocks \
+    gnome-calendar \
     firefox \
-    lubuntu-artwork \
-    lubuntu-desktop \
-    lubuntu-default-settings \
-    sddm \
-    sddm-theme-lubuntu \
-    openbox \
-    obconf \
-    stterm \
-    lxqt-core \
-    papirus-icon-theme \
-    adwaita-icon-theme-full \
-    mime-support \
-    qt5-gtk-platformtheme \
-    htop \
-    qterminal \
-    lxqt-archiver \
-    featherpad \
-    lximage-qt \
-    qlipper && \
+    eog \
+    evince \
+    rhythmbox \
+    gnome-tweaks && \
+  echo "**** remove un-needed packages ****" && \
+  apt-get remove -y \
+    gnome-power-manager \
+    gnome-bluetooth && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
