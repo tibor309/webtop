@@ -3,6 +3,7 @@ Linux containers with full desktop environments accessible trough a web browser.
 
 ## Desktops
 ### Ubuntu
+[![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo]
 [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo]
 *(More coming soon!)*
 
@@ -86,6 +87,8 @@ To access the container, navigate to the ip address for your machine with the po
 [link]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 
-[ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
 
 [ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
+[ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
