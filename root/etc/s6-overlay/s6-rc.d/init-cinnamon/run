@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+
+# remove shortuts and panels
+rm -v /usr/share/applications/cinnamon-network-panel.desktop \
+    /usr/share/applications/nm-connection-editor.desktop \
+    /usr/share/applications/cinnamon-settings-power.desktop \
+    /usr/share/applications/cinnamon-settings-user.desktop \
+    /usr/share/applications/cinnamon-display-panel.desktop \
+    /usr/share/applications/cinnamon-color-panel.desktop
+
+if [ ! -f "/config/.config/.firstsetup" ]; then
+    mkdir -p /config/.config/{gtk-3.0,gtk-4.0}
+    mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+    touch /config/.config/.firstsetup
+fi
+
+# fix permissions
+chown abc:abc /config/.config/{gtk-3.0,gtk-4.0}/*
+chown abc:abc /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
