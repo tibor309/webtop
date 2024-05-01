@@ -32,37 +32,39 @@ RUN \
     ubuntu-keyring \
     ubuntu-wallpapers \
     ubuntu-docs \
-    gnome-desktop \
-    gnome-desktop3-data \
     gnome-shell \
     gnome-menus \
     gnome-user-docs \
     gnome-accessibility-themes \
-    gnome-themes-extra \
-    gnome-themes-extra-data \
     yaru-theme-gnome-shell \
     yaru-theme-gtk \
     yaru-theme-icon \
     yaru-theme-sound \
-    gnome-terminal \
-    nautilus-extension-gnome-terminal \
     gnome-control-center \
     gnome-online-accounts \
     gnome-text-editor \
     gnome-system-monitor \
-    totem \
+    gnome-terminal \
+    nautilus-extension-gnome-terminal \
     gnome-calculator \
     gnome-clocks \
     gnome-calendar \
     firefox \
     eog \
     evince \
+    totem \
     rhythmbox \
     gnome-tweaks && \
   echo "**** remove un-needed packages ****" && \
   apt-get remove -y \
     gnome-power-manager \
-    gnome-bluetooth && \
+    gnome-bluetooth \
+    hijra-applet \
+    mailnag \
+    gnome-shell-mailnag \
+    snapd \
+    gnome-shell-pomodoro \
+    gnome-shell-pomodoro-data && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
