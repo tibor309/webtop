@@ -24,11 +24,22 @@ RUN \
   add-apt-repository -y ppa:ubuntucinnamonremix/all && \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
-    firefox \
+    fonts-ubuntu \
     ubuntucinnamon-environment \
     ubuntucinnamon-wallpapers \
     yaru-cinnamon-theme-icon \
-    yaru-cinnamon-theme-gtk && \
+    yaru-cinnamon-theme-gtk \
+    gnome-system-monitor \
+    gnome-calculator \
+    gnome-calendar \
+    gnome-terminal \
+    firefox \
+    rhythmbox \
+    eog \
+    gedit \
+    evince \
+    file-roller \
+    celluloid && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
