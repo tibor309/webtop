@@ -30,7 +30,7 @@ jobs:
           file: ./Dockerfile
           push: true
           provenance: false
-          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:ubuntu-amd64
+          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:kubuntu-amd64
       
       - name: Build and push image for arm64
         uses: docker/build-push-action@v5
@@ -40,14 +40,14 @@ jobs:
           file: ./Dockerfile.aarch64
           push: true
           provenance: false
-          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:ubuntu-arm64
+          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:kubuntu-arm64
 
       - name: Create manifest
         run: |
           docker manifest create ghcr.io/${{ github.repository }}:ubuntu \
-            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:ubuntu-amd64 \
-            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:ubuntu-arm64
+            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:kubuntu-amd64 \
+            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:kubuntu-arm64
 
       - name: Push manifest
         run: |
-          docker manifest push ghcr.io/${{ github.repository }}:ubuntu
+          docker manifest push ghcr.io/${{ github.repository }}:kubuntu
