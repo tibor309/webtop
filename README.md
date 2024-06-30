@@ -1,13 +1,9 @@
 ## 🖥️ Webtop
-# Ubuntu
-![Ubuntu](https://i.imgur.com/jKuw9Vm.png)
+# Kubuntu
+![Kubuntu](https://i.imgur.com/fhXBQ3z.png)
 
 ## Setup
-To use this desktop, change the docker image tag to `ubuntu`. For setup instructions, go back to the [main page][main_repo].
-
-
-> [!NOTE]
-> Theming is a bit broken. Also the desktop might suddenly crash sometimes.
+To use this desktop, change the docker image tag to `kubuntu`. For setup instructions, go back to the [main page][main_repo].
 
 
 

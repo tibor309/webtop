@@ -3,16 +3,17 @@
 setterm blank 0
 setterm powerdown 0
 
-# change gnome settings
-gsettings set org.gnome.desktop.lockdown disable-lock-screen true
-gsettings set org.gnome.desktop.screensaver lock-enabled false
-gsettings set org.gnome.desktop.session idle-delay 0
+# Enable Nvidia GPU support if detected
+if which nvidia-smi; then
+  export LIBGL_KOPPER_DRI2=1
+  export MESA_LOADER_DRIVER_OVERRIDE=zink
+  export GALLIUM_DRIVER=zink
+fi
 
-# set session
-export XDG_SESSION_TYPE=x11
-export DESKTOP_SESSION=ubuntu
-export GNOME_SHELL_SESSION_MODE=ubuntu
-export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+# disable screen lock
+if [ ! -f $HOME/.config/kscreenlockerrc ]; then
+  kwriteconfig5 --file $HOME/.config/kscreenlockerrc --group Daemon --key Autolock false
+fi
 
 # set folder locations
 xdg-user-dirs-update --set DESKTOP /config/Desktop
@@ -24,9 +25,5 @@ xdg-user-dirs-update --set PUBLICSHARE /config/Public
 xdg-user-dirs-update --set TEMPLATES /config/Templates
 xdg-user-dirs-update --set VIDEOS /config/Videos
 
-export $(dbus-launch)
-export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/config/.local/share/flatpak/exports/share:/usr/local/share:/usr/share
-
-dconf load / < /defaults/gnome.conf
-
-/usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
+# launch de
+/usr/bin/dbus-launch /usr/bin/startplasma-x11 > /dev/null 2>&1

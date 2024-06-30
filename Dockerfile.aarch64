@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
 LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # title
-ENV TITLE="Ubuntu"
+ENV TITLE="Kubuntu"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
@@ -23,58 +23,50 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_logo_256x256.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_logo_256x256.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_icon_32x32.ico && \
   echo "**** install packages ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     dbus-x11 \
-    fonts-ubuntu \
-    language-pack-en-base \
-    language-pack-gnome-en \
-    mesa-utils \
-    xdg-desktop-portal \
-    ubuntu-desktop \
-    ubuntu-settings \
-    ubuntu-keyring \
-    ubuntu-wallpapers \
-    ubuntu-docs \
-    gnome-shell \
-    gnome-menus \
-    gnome-user-docs \
-    gnome-accessibility-themes \
-    yaru-theme-gnome-shell \
-    yaru-theme-gtk \
-    yaru-theme-icon \
-    yaru-theme-sound \
-    gnome-control-center \
-    gnome-online-accounts \
-    gnome-text-editor \
-    gnome-system-monitor \
-    gnome-terminal \
-    nautilus-extension-gnome-terminal \
-    gnome-calculator \
-    gnome-clocks \
-    gnome-calendar \
+    dolphin \
     firefox \
-    eog \
-    evince \
-    totem \
-    rhythmbox \
-    gnome-tweaks && \
-  echo "**** remove un-needed packages ****" && \
-  apt-get remove -y \
-    gnome-power-manager \
-    gnome-bluetooth \
-    hijra-applet \
-    mailnag \
-    gnome-shell-mailnag \
-    snapd \
-    gnome-shell-pomodoro \
-    gnome-shell-pomodoro-data && \
+    gwenview \
+    ark \
+    haruna \
+    kde-spectacle \
+    kcalc \
+    kwrite \
+    konsole \
+    ksystemstats \
+    systemsettings \
+    kfind \
+    khotkeys \
+    breeze-gtk-theme \
+    kde-config-gtk-style \
+    kdialog \
+    kio-extras \
+    knewstuff-dialog \
+    kubuntu-desktop \
+    kubuntu-settings-desktop \
+    kubuntu-wallpapers \
+    kubuntu-web-shortcuts \
+    kwin-addons \
+    kwin-x11 \
+    plasma-desktop \
+    plasma-workspace \
+    plasma-widgets-addons \
+    plasma-browser-integration \
+    plymouth-theme-kubuntu-logo \
+    plymouth-theme-kubuntu-text \
+    qml-module-qt-labs-platform && \
+  echo "**** kde tweaks ****" && \
+  sed -i \
+    's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
+    /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
