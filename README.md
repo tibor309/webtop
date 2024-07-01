@@ -2,13 +2,15 @@
 Linux containers with full desktop environments accessible trough a web browser.
 
 ## Desktops
+These desktops are currently available.
+
 ### Ubuntu
 [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo]
 [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo]
-*(More coming soon!)*
+[![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo]
 
 ## Setup
-To setup the container, you can use the docker cli, or docker compose.
+To setup the container, you can use the docker cli, or docker compose. Don't forget to change the image tag to your desired desktop variant!
 
 ### [docker-compose][dcompose] (recommended)
 ```yaml
@@ -16,7 +18,7 @@ To setup the container, you can use the docker cli, or docker compose.
 services:
   webtop:
     image: ghcr.io/tibor309/webtop:ubuntu-cinnamon
-    container_name: ubuntu-webtop
+    container_name: webtop
     security_opt:
       - seccomp:unconfined #optional
     environment:
@@ -40,7 +42,7 @@ services:
 ### [docker-cli][dcli]
 ```bash
 docker run -d \
-  --name=ubuntu-webtop \
+  --name=webtop \
   --security-opt seccomp=unconfined `#optional` \
   -e PUID=1000 \
   -e PGID=1000 \
@@ -89,6 +91,8 @@ To access the container, navigate to the ip address for your machine with the po
 
 [ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
 [ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
 
 [ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
 [ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
+[ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
