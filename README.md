@@ -9,6 +9,9 @@ These desktops are currently available.
 [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo]
 [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo]
 
+### Fedora
+[![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo]
+
 ## Setup
 To setup the container, you can use the docker cli, or docker compose. Don't forget to change the image tag to your desired desktop variant!
 
@@ -92,7 +95,9 @@ To access the container, navigate to the ip address for your machine with the po
 [ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
 [ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
 [ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
+[fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
 
 [ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
 [ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
 [ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
+[fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
