@@ -23,7 +23,7 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_logo_256x256.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_logo_256x256.png && \
   curl -o \
     /kclient/public/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_icon_32x32.ico && \
