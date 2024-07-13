@@ -23,58 +23,47 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_logo_256x256.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/ubuntu/ubuntu_cof_logo_256x256.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu/ubuntu_cof_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/ubuntu/ubuntu_cof_icon_32x32.ico && \
   echo "**** install packages ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     dbus-x11 \
-    fonts-ubuntu \
+    fonts-cantarell \
     language-pack-en-base \
     language-pack-gnome-en \
     mesa-utils \
     xdg-desktop-portal \
-    ubuntu-desktop \
-    ubuntu-settings \
-    ubuntu-keyring \
-    ubuntu-wallpapers \
-    ubuntu-docs \
+    vanilla-gnome-desktop \
+    vanilla-gnome-default-settings \
     gnome-shell \
     gnome-menus \
     gnome-user-docs \
     gnome-accessibility-themes \
-    yaru-theme-gnome-shell \
-    yaru-theme-gtk \
-    yaru-theme-icon \
-    yaru-theme-sound \
+    gnome-backgrounds \
     gnome-control-center \
     gnome-online-accounts \
     gnome-text-editor \
     gnome-system-monitor \
-    gnome-terminal \
+    gnome-console \
+    nautilus \
     nautilus-extension-gnome-terminal \
     gnome-calculator \
     gnome-clocks \
     gnome-calendar \
     firefox \
-    eog \
+    loupe \
     evince \
     totem \
-    rhythmbox \
+    gnome-music \
     gnome-tweaks && \
   echo "**** remove un-needed packages ****" && \
   apt-get remove -y \
-    gnome-power-manager \
-    gnome-bluetooth \
-    hijra-applet \
-    mailnag \
-    gnome-shell-mailnag \
-    snapd \
-    gnome-shell-pomodoro \
-    gnome-shell-pomodoro-data && \
+    power-profiles-daemon \
+    snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
