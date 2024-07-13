@@ -5,14 +5,15 @@ setterm powerdown 0
 
 # change gnome settings
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+gsettings set org.gnome.desktop.lockdown disable-log-out true
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # set session
 export XDG_SESSION_TYPE=x11
-export DESKTOP_SESSION=ubuntu
-export GNOME_SHELL_SESSION_MODE=ubuntu
-export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+export DESKTOP_SESSION=gnome-xorg
+#export GNOME_SHELL_SESSION_MODE=ubuntu
+export XDG_CURRENT_DESKTOP=GNOME
 
 # set folder locations
 xdg-user-dirs-update --set DESKTOP /config/Desktop

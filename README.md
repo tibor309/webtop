@@ -1,13 +1,10 @@
 ## 🖥️ Webtop
-# Ubuntu
-![Ubuntu](https://i.imgur.com/jKuw9Vm.png)
+# Ubuntu Vanilla
+![Ubuntu Vanilla](https://i.imgur.com/o1LuyoF.png)
 
 ## Setup
-To use this desktop, change the docker image tag to `ubuntu`. For setup instructions, go back to the [main page][main_repo].
+To use this desktop, change the docker image tag to `ubuntu-vanilla`. For setup instructions, go back to the [main page][main_repo].
 
-
-> [!NOTE]
-> Theming is a bit broken. Also the desktop might suddenly crash sometimes.
 
 
 
