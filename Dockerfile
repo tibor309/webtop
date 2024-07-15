@@ -69,12 +69,7 @@ RUN \
   apt-get remove -y \
     gnome-power-manager \
     gnome-bluetooth \
-    hijra-applet \
-    mailnag \
-    gnome-shell-mailnag \
-    snapd \
-    gnome-shell-pomodoro \
-    gnome-shell-pomodoro-data && \
+    snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
