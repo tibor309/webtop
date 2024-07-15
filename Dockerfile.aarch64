@@ -65,16 +65,11 @@ RUN \
     totem \
     rhythmbox \
     gnome-tweaks && \
-  echo "**** remove un-needed packages ****" && \
-  apt-get remove -y \
-    gnome-power-manager \
-    gnome-bluetooth \
-    hijra-applet \
-    mailnag \
-    gnome-shell-mailnag \
-    snapd \
-    gnome-shell-pomodoro \
-    gnome-shell-pomodoro-data && \
+    echo "**** remove un-needed packages ****" && \
+    apt-get remove -y \
+      gnome-power-manager \
+      gnome-bluetooth \
+      snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
