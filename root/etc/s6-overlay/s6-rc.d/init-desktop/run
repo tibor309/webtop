@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+# remove shortuts and panels
+rm -v /usr/share/applications/cinnamon-network-panel.desktop \
+    /usr/share/applications/nm-connection-editor.desktop \
+    /usr/share/applications/cinnamon-settings-power.desktop \
+    /usr/share/applications/cinnamon-settings-user.desktop \
+    /usr/share/applications/cinnamon-display-panel.desktop \
+    /usr/share/applications/cinnamon-color-panel.desktop
