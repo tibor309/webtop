@@ -22,32 +22,13 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_TOKEN }}
 
-      - name: Build and push image for amd64
+      - name: Build and push image for amd64/arm64
         uses: docker/build-push-action@v5
         with:
           context: .
           platforms: linux/amd64
           file: ./Dockerfile
           push: true
-          provenance: false
-          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:main-amd64
-      
-      - name: Build and push image for arm64
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          platforms: linux/arm64
-          file: ./Dockerfile.aarch64
-          push: true
-          provenance: false
-          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:main-arm64
-
-      - name: Create manifest
-        run: |
-          docker manifest create ghcr.io/${{ github.repository }}:latest \
-            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:main-amd64 \
-            --amend ghcr.io/${{ github.repository_owner }}/${{ secrets.DEV_REPO }}:main-arm64
-
-      - name: Push manifest
-        run: |
-          docker manifest push ghcr.io/${{ github.repository }}:latest
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/webtop:latest
+            ghcr.io/${{ github.repository_owner }}/webtop:ubuntu-cinnamon
