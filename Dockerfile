@@ -5,7 +5,7 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version: ${VERSION} Build-date: ${BUILD_DATE}"
 LABEL maintainer="tibor309"
-LABEL org.opencontainers.image.description="Linux desktop acessible trough a web browser."
+LABEL org.opencontainers.image.description="Linux desktop accessible trough a web browser."
 LABEL org.opencontainers.image.source=https://github.com/tibor309/webtop
 LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
 LABEL org.opencontainers.image.licenses=GPL-3.0
