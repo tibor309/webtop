@@ -22,15 +22,22 @@ if which nvidia-smi; then
   export GALLIUM_DRIVER=zink
 fi
 
-# set folder locations
-xdg-user-dirs-update --set DESKTOP /config/Desktop
-xdg-user-dirs-update --set DOCUMENTS /config/Documents
-xdg-user-dirs-update --set DOWNLOAD /config/Downloads
-xdg-user-dirs-update --set MUSIC /config/Music
-xdg-user-dirs-update --set PICTURES /config/Pictures
-xdg-user-dirs-update --set PUBLICSHARE /config/Public
-xdg-user-dirs-update --set TEMPLATES /config/Templates
-xdg-user-dirs-update --set VIDEOS /config/Videos
+# create user folders
+if [ ! -f "$HOME/.firstsetup" ]; then
+    mkdir -p $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+    chown abc:abc $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+
+    xdg-user-dirs-update --set DESKTOP $HOME/Desktop
+    xdg-user-dirs-update --set DOCUMENTS $HOME/Documents
+    xdg-user-dirs-update --set DOWNLOAD $HOME/Downloads
+    xdg-user-dirs-update --set MUSIC $HOME/Music
+    xdg-user-dirs-update --set PICTURES $HOME/Pictures
+    xdg-user-dirs-update --set PUBLICSHARE $HOME/Public
+    xdg-user-dirs-update --set TEMPLATES $HOME/Templates
+    xdg-user-dirs-update --set VIDEOS $HOME/Videos
+
+    touch $HOME/.firstsetup
+fi
 
 export $(dbus-launch)
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/config/.local/share/flatpak/exports/share:/usr/local/share:/usr/share
