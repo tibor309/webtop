@@ -10,13 +10,5 @@ rm -v /usr/share/applications/gnome-network-panel.desktop \
     /usr/share/applications/gnome-color-panel.desktop \
     /usr/share/applications/update-manager.desktop
 
-if [ ! -f "/config/.firstsetup" ]; then
-    mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
-    touch /config/.firstsetup
-fi
-
-# fix permissions
-chown abc:abc /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
-
 # start dbus
 service dbus start
