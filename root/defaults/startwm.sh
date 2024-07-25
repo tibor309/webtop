@@ -10,6 +10,7 @@ if which nvidia-smi; then
   export GALLIUM_DRIVER=zink
 fi
 
+# create user folders
 if [ ! -f "$HOME/.firstsetup" ]; then
     mkdir -p $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
     chown abc:abc $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
@@ -25,7 +26,6 @@ if [ ! -f "$HOME/.firstsetup" ]; then
 
     touch $HOME/.firstsetup
 fi
-# set folder locations
 
 
 /usr/bin/cinnamon-session > /dev/null 2>&1
