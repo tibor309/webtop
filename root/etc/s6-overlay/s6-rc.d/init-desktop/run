@@ -4,11 +4,5 @@
 for file in $(find /usr -type f -iname "*login1*"); do rm -v $file; done
 echo "\n\nexport $(dbus-launch)\nexport XDG_CURRENT_DESKTOP=ubuntu:GNOME\nexport XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/config/.local/share/flatpak/exports/share:/usr/local/share:/usr/share\nexport XDG_SESSION_TYPE=x11\nexport DESKTOP_SESSION=ubuntu\nexport GNOME_SHELL_SESSION_MODE=ubuntu" >> /etc/profile
 
-# remove shortuts and panels
-rm -v /usr/share/applications/gnome-network-panel.desktop \
-    /usr/share/applications/gnome-sharing-panel.desktop \
-    /usr/share/applications/gnome-color-panel.desktop \
-    /usr/share/applications/update-manager.desktop
-
 # start dbus
 service dbus start
