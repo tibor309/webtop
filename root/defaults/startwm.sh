@@ -14,6 +14,9 @@ fi
 if [ ! -f $HOME/.config/kscreenlockerrc ]; then
   kwriteconfig5 --file $HOME/.config/kscreenlockerrc --group Daemon --key Autolock false
 fi
+if [ ! -f $HOME/.config/kdeglobals ]; then
+  kwriteconfig6 --file $HOME/.config/kdeglobals --group KDE --key LookAndFeelPackage org.fedoraproject.fedora.desktop
+fi
 
 # create user folders
 if [ ! -f "$HOME/.firstsetup" ]; then
@@ -34,4 +37,4 @@ fi
 
 
 # launch de
-/usr/bin/dbus-launch /usr/bin/startplasma-x11 > /dev/null 2>&1
+/usr/bin/startplasma-x11 > /dev/null 2>&1

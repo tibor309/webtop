@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:fedora40
 
 # set labels
 ARG BUILD_DATE
@@ -11,70 +11,59 @@ LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
 LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # title
-ENV TITLE="Kubuntu"
-
-# environment settings
-ARG DEBIAN_FRONTEND="noninteractive"
-
-# prevent Ubuntu's firefox stub from being installed
-COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
+ENV TITLE="Fedora KDE"
 
 RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_logo_256x256.png && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_logo_256x251.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_icon_48x48.ico && \
   echo "**** install packages ****" && \
-  add-apt-repository -y ppa:mozillateam/ppa && \
-  apt-get update && \
-  apt-get install --no-install-recommends -y \
-    dbus-x11 \
-    dolphin \
+  dnf install -y --setopt=install_weak_deps=False --best \
     firefox \
+    dolphin \
     gwenview \
     ark \
-    haruna \
-    kde-spectacle \
+    dragon \
+    spectacle \
     kcalc \
     kwrite \
-    konsole \
+    plasma-systemmonitor \
+    konsole5 \
     ksystemstats \
-    systemsettings \
     kfind \
-    khotkeys \
-    breeze-gtk-theme \
-    kde-config-gtk-style \
+    breeze-gtk-gtk3 \
+    breeze-gtk-gtk4 \
     kdialog \
-    kio-extras \
-    knewstuff-dialog \
-    kubuntu-desktop \
-    kubuntu-settings-desktop \
-    kubuntu-wallpapers \
-    kubuntu-web-shortcuts \
-    kwin-addons \
-    kwin-x11 \
+    kmenuedit \
+    kde-gtk-config \
+    kde-settings-pulseaudio \
+    kde-wallpapers \
+    plasma-breeze \
     plasma-desktop \
-    plasma-workspace \
-    plasma-widgets-addons \
+    plasma-workspace-xorg \
+    kdeplasma-addons \
     plasma-browser-integration \
-    plymouth-theme-kubuntu-logo \
-    plymouth-theme-kubuntu-text \
-    qml-module-qt-labs-platform && \
+    qt5-qtscript && \
   echo "**** kde tweaks ****" && \
   sed -i \
     's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
     /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
+  rm -f \
+    /etc/xdg/autostart/at-spi-dbus-bus.desktop \
+    /etc/xdg/autostart/gmenudbusmenuproxy.desktop \
+    /etc/xdg/autostart/polkit-kde-authentication-agent-1.desktop \
+    /etc/xdg/autostart/powerdevil.desktop && \
   echo "**** cleanup ****" && \
-  apt-get autoclean && \
+  dnf autoremove -y && \
+  dnf clean all && \
   rm -rf \
     /config/.cache \
-    /config/.launchpadlib \
-    /var/lib/apt/lists/* \
-    /var/tmp/* \
     /tmp/*
+  
 
 # add local files
 COPY /root /

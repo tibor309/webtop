@@ -29,4 +29,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/tibor309/webtop:kubuntu
+          tags: ghcr.io/tibor309/webtop:fedora-kde
