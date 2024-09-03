@@ -71,8 +71,8 @@ This container is based on the linuxserver.io kasmvnc base image, so you can use
 | :----: | --- |
 | `-p 3000` | Web Desktop GUI |
 | `-p 3001` | Web Desktop GUI HTTPS |
-| `-e PUID=1000` | For UserID - see below for explanation |
-| `-e PGID=1000` | For GroupID - see below for explanation |
+| `-e PUID=1000` | For UserID |
+| `-e PGID=1000` | For GroupID |
 | `-e TZ=Etc/UTC` | Specify a timezone to use, see this [list][tz]. |
 | `-e SUBFOLDER=/` | Specify a subfolder to use with reverse proxies, IE `/subfolder/` |
 | `-e TITLE=Webtop` | String which will be used as page/tab title in the web browser. |
