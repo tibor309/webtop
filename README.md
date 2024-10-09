@@ -1,6 +1,6 @@
 ## 🖥️ Webtop
 # Ubuntu
-![Ubuntu](https://i.imgur.com/jKuw9Vm.png)
+![Ubuntu](https://i.imgur.com/SPMtS35.png)
 
 ## Setup
 To use this desktop, change the docker image tag to `ubuntu`. For setup instructions, go back to the [main page][main_repo].
@@ -11,4 +11,4 @@ To use this desktop, change the docker image tag to `ubuntu`. For setup instruct
 
 
 
-[main_repo]: https://github.com/tibor309/webtop
+[main_repo]: https://github.com/tibor309/webtop/tree/main
