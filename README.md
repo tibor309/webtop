@@ -2,17 +2,12 @@
 Linux containers with full desktop environments accessible trough a web browser.
 
 ## Desktops
-These desktops are currently available.
+You can choose from these distros and desktops.
 
-### Ubuntu
-[![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo]
-[![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo]
-[![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo]
-[![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo]
-
-### Fedora
-[![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo]
-[![fedora-kde][fedora-kde-badge]][fedora-kde-repo]
+| Distro | Flavour |
+| :--- | :--- |
+| **Ubuntu** | [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo] [![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo] [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo] [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo] |
+| **Fedora** | [![fedora-kde][fedora-kde-badge]][fedora-kde-repo] [![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo] |
 
 ## Setup
 To setup the container, you can use the docker cli, or docker compose. Don't forget to change the image tag to your desired desktop variant!
