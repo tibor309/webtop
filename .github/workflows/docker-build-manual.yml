@@ -1,9 +1,9 @@
-name: "Build and push docker image"
+name: "Manual rebuild"
 on:
   [workflow_dispatch]
 
 jobs:
-  Build:
+  rebuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
