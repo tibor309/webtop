@@ -3,6 +3,13 @@
 setterm blank 0
 setterm powerdown 0
 
+# Enable Nvidia GPU support if detected
+if which nvidia-smi; then
+  export LIBGL_KOPPER_DRI2=1
+  export MESA_LOADER_DRIVER_OVERRIDE=zink
+  export GALLIUM_DRIVER=zink
+fi
+
 # create user folders
 if [ ! -f "$HOME/.firstsetup" ]; then
     mkdir -p $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
