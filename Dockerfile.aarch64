@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
 LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # title
-ENV TITLE="Ubuntu Cinnamon"
+ENV TITLE="Xubuntu"
 
 # environment settings
 ARG  DEBIAN_FRONTEND="noninteractive"
@@ -20,35 +20,40 @@ ARG  DEBIAN_FRONTEND="noninteractive"
 COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
 
 RUN \
-  echo "**** add icon ****" && \
+echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_logo_256x256.png && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/xubuntu/xubuntu_logo_256x256.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/main/icons/xubuntu/xubuntu_icon_32x32.ico && \
   echo "**** install packages ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
   apt-get update -y && \
-  add-apt-repository -y ppa:ubuntucinnamonremix/all && \
-  apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
-    ubuntucinnamon-environment \
-    ubuntucinnamon-wallpapers \
-    yaru-cinnamon-theme-icon \
-    yaru-cinnamon-theme-gtk \
-    gnome-system-monitor \
-    gnome-calculator \
-    gnome-calendar \
-    gnome-terminal \
+    xdg-user-dirs \
+    xfce4 \
+    xubuntu-wallpapers \
+    xubuntu-artwork \
+    xubuntu-icon-theme \
+    adwaita-icon-theme \
+    dmz-cursor-theme \
+    xubuntu-default-settings \
     firefox \
-    rhythmbox \
-    eog \
-    gedit \
-    evince \
-    file-roller \
-    celluloid && \
+    mousepad \
+    thunar \
+    mate-calc \
+    engrampa \
+    ristretto \
+    parole \
+    xfce4-indicator-plugin \
+    xfce4-screenshooter \
+    xfce4-taskmanager \
+    xfce4-terminal && \
+  echo "**** xfce tweaks ****" && \
+  rm -f \
+    /etc/xdg/autostart/xscreensaver.desktop && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \

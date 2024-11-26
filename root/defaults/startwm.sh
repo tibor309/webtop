@@ -22,4 +22,4 @@ fi
 
 
 # launch de
-/usr/bin/cinnamon-session > /dev/null 2>&1
+/usr/bin/xfce4-session > /dev/null 2>&1
