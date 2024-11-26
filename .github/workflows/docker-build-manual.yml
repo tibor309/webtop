@@ -1,9 +1,9 @@
-name: "Build and push docker image"
+name: "Manual rebuild"
 on:
   [workflow_dispatch]
 
 jobs:
-  Build:
+  rebuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -30,5 +30,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/tibor309/webtop:latest
-            ghcr.io/tibor309/webtop:ubuntu-cinnamon
+            ghcr.io/tibor309/webtop:xubuntu
