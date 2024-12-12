@@ -34,6 +34,7 @@ RUN \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
+    xdg-user-dirs \
     ubuntucinnamon-environment \
     ubuntucinnamon-wallpapers \
     yaru-cinnamon-theme-icon \
