@@ -6,7 +6,7 @@ You can choose from these distros and desktops.
 
 | Distro | Flavour |
 | :--- | :--- |
-| **Ubuntu** | [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo] [![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo] [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo] [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo] |
+| **Ubuntu** | [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo] [![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo] [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo] [![ubuntu-xfce][ubuntu-xfce-badge]][ubuntu-xfce-repo] [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo] |
 | **Fedora** | [![fedora-kde][fedora-kde-badge]][fedora-kde-repo] [![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo] |
 
 ## Setup
@@ -93,6 +93,7 @@ To access the container, navigate to the ip address for your machine with the po
 [ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
 [ubuntu-vanilla-gnome-badge]: https://img.shields.io/badge/Ubuntu%20Vanilla-4A86CF?style=for-the-badge&logo=ubuntu&logoColor=white
 [ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
+[ubuntu-xfce-badge]: https://img.shields.io/badge/Xubuntu-0044AA.svg?style=for-the-badge&logo=Xubuntu&logoColor=white
 [fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
 [fedora-kde-badge]: https://img.shields.io/badge/Fedora%20kde%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
 
@@ -100,5 +101,6 @@ To access the container, navigate to the ip address for your machine with the po
 [ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
 [ubuntu-vanilla-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu-vanilla
 [ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
+[ubuntu-xfce-repo]: https://github.com/tibor309/webtop/tree/xubuntu
 [fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
 [fedora-kde-repo]: https://github.com/tibor309/webtop/tree/fedora-kde
