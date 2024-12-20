@@ -1,10 +1,9 @@
-## 🖥️ Webtop
-# Xubuntu
+# 🖥️ Xubutnu
 
 ![Xubuntu](https://i.imgur.com/DEygsAl.png)
 
 ## Setup
-To setup the container, head back to the [main page][main_repo], and choose one of the setup options. To use this desktop, change the image tag to `xubuntu`!
+To use this desktop, change the image tag to `xubuntu`. For setup options, go back to [main page][setup].
 
 
-[main_repo]: https://github.com/tibor309/webtop/tree/main
+[setup]: https://github.com/tibor309/webtop?tab=readme-ov-file#setup
