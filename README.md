@@ -1,10 +1,9 @@
-## 🖥️ Webtop
-# Ubuntu Cinnamon Remix
+# 🖥️ Ubuntu Cinnamon Remix
 
 ![Cinnamon](https://i.imgur.com/qX43Tbh.png)
 
 ## Setup
-To setup the container, head back to the [main page][main_repo], and choose one of the setup options. To use this desktop, change the image tag to `ubuntu-cinnamon`!
+To use this desktop, change the docker image tag to `ubuntu-cinnamon`. For setup options, go back to the [main page][setup].
 
 
-[main_repo]: https://github.com/tibor309/webtop/tree/main
+[setup]: https://github.com/tibor309/webtop?tab=readme-ov-file#setup
