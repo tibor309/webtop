@@ -17,7 +17,7 @@ To setup the container, you can use the docker cli, or docker compose. Don't for
 ---
 services:
   webtop:
-    image: ghcr.io/tibor309/webtop:ubuntu-cinnamon
+    image: ghcr.io/tibor309/webtop:kubuntu
     container_name: webtop
     security_opt:
       - seccomp:unconfined #optional
@@ -56,7 +56,7 @@ docker run -d \
   --device /dev/dri:/dev/dri `#optional` \
   --shm-size="1gb" `#optional` \
   --restart unless-stopped \
-  ghcr.io/tibor309/webtop:ubuntu-cinnamon
+  ghcr.io/tibor309/webtop:kubuntu
 ```
 
 ## Config
