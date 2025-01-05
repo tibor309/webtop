@@ -1,6 +1,5 @@
 # 🖥️ Xubutnu
-
-![Xubuntu](https://i.imgur.com/DEygsAl.png)
+![xubuntu](https://github.com/user-attachments/assets/178d333c-eda7-43a5-8527-86b396b64e31)
 
 ## Setup
 To use this desktop, change the image tag to `xubuntu`. For setup options, go back to [main page][setup].
