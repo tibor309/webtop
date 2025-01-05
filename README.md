@@ -1,5 +1,5 @@
 # 🖥️ Ubuntu
-![Ubuntu](https://i.imgur.com/SPMtS35.png)
+![ubuntu](https://github.com/user-attachments/assets/9d8e0d79-d997-45c9-a955-81f6356ae3b7)
 
 ## Setup
 To use this desktop, change the docker image tag to `ubuntu`. For setup options, go back to the [main page][setup].
