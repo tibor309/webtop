@@ -27,10 +27,10 @@ RUN \
   curl -o \
     /kclient/public/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_icon_32x32.ico && \
-  echo "**** install packages ****" && \
+  echo "**** add package sources ****" && \
   add-apt-repository -y ppa:mozillateam/ppa && \
-  apt-get update -y && \
   add-apt-repository -y ppa:ubuntucinnamonremix/all && \
+  echo "**** install packages ****" && \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
