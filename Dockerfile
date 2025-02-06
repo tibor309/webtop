@@ -55,11 +55,11 @@ RUN \
     gnome-online-accounts \
     gnome-system-monitor \
     gnome-terminal \
-    nautilus \
-    nautilus-extension-gnome-terminal \
     gnome-calculator \
     gnome-clocks \
     gnome-calendar \
+    nautilus \
+    nautilus-extension-gnome-terminal \
     zorin-appearance \
     zorin-appearance-layouts-shell-core \
     alacarte \
