@@ -41,30 +41,27 @@ RUN \
     ubuntu-settings \
     ubuntu-keyring \
     ubuntu-wallpapers \
-    ubuntu-docs \
-    gnome-shell \
-    gnome-menus \
-    gnome-user-docs \
-    gnome-accessibility-themes \
-    yaru-theme-gnome-shell \
     yaru-theme-gtk \
     yaru-theme-icon \
     yaru-theme-sound \
+    yaru-theme-gnome-shell \
+    adwaita-icon-theme \
+    gnome-shell \
     gnome-control-center \
     gnome-online-accounts \
     gnome-text-editor \
     gnome-system-monitor \
     gnome-terminal \
-    nautilus-extension-gnome-terminal \
     gnome-calculator \
     gnome-clocks \
     gnome-calendar \
+    nautilus \
+    nautilus-extension-gnome-terminal \
     firefox \
+    rhythmbox \
     eog \
     evince \
-    totem \
-    rhythmbox \
-    gnome-tweaks && \
+    totem && \
     echo "**** remove un-needed packages ****" && \
     apt-get remove -y \
       gnome-power-manager \
