@@ -34,6 +34,5 @@ fi
 export $(dbus-launch)
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
-dconf load / < /defaults/gnome.conf
-
+# launch DE
 /usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
