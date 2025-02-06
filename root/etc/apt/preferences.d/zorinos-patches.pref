@@ -1,0 +1,4 @@
+Explanation: OS Patches for Zorin
+Package: *
+Pin: release o=Zorin OS,l=Zorin OS Patches
+Pin-Priority: 999
