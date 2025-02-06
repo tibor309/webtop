@@ -32,7 +32,7 @@ if [ ! -f "$HOME/.firstsetup" ]; then
 fi
 
 export $(dbus-launch)
-export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/usr/local/share:/usr/share
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 dconf load / < /defaults/gnome.conf
 
