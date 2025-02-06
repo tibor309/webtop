@@ -12,6 +12,7 @@ gsettings set org.gnome.desktop.session idle-delay 0
 # set session
 export XDG_SESSION_TYPE=x11
 export DESKTOP_SESSION=gnome-xorg
+export GNOME_SHELL_SESSION_MODE=gnome
 export XDG_CURRENT_DESKTOP=GNOME
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export $(dbus-launch)
