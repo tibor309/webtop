@@ -30,5 +30,8 @@ export XDG_TEMPLATES_DIR=/config/Templates
 export XDG_VIDEOS_DIR=/config/Videos
 xdg-user-dirs-update
 
+# load dconf
+/usr/bin/dconf load / < /defaults/gnome.conf
+
 # launch DE
 /usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
