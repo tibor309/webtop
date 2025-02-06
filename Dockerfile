@@ -52,7 +52,6 @@ RUN \
     gnome-calendar \
     gnome-music \
     nautilus \
-    nautilus-extension-gnome-terminal \
     firefox \
     loupe \
     evince \
