@@ -39,27 +39,24 @@ RUN \
     xdg-desktop-portal \
     vanilla-gnome-desktop \
     vanilla-gnome-default-settings \
-    gnome-shell \
-    gnome-menus \
-    gnome-user-docs \
-    gnome-accessibility-themes \
     gnome-backgrounds \
+    adwaita-icon-theme \
+    gnome-shell \
     gnome-control-center \
     gnome-online-accounts \
     gnome-text-editor \
     gnome-system-monitor \
     gnome-console \
-    nautilus \
-    nautilus-extension-gnome-terminal \
     gnome-calculator \
     gnome-clocks \
     gnome-calendar \
+    gnome-music \
+    nautilus \
+    nautilus-extension-gnome-terminal \
     firefox \
     loupe \
     evince \
-    totem \
-    gnome-music \
-    gnome-tweaks && \
+    totem && \
   echo "**** remove un-needed packages ****" && \
   apt-get remove -y \
     power-profiles-daemon \
