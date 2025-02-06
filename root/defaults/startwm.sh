@@ -11,8 +11,8 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 # set session
 export XDG_SESSION_TYPE=x11
-export DESKTOP_SESSION=gnome-xorg
-export XDG_CURRENT_DESKTOP=GNOME
+export DESKTOP_SESSION=zorin-xorg
+export XDG_CURRENT_DESKTOP=zorin:GNOME
 
 # create user folders
 if [ ! -f "$HOME/.firstsetup" ]; then

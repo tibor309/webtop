@@ -1,0 +1,4 @@
+Explanation: OS Patches for Zorin
+Package: *
+Pin: release o=LP-PPA-zorin-os-patches
+Pin-Priority: 999
