@@ -1,14 +1,20 @@
 #!/bin/bash
 
-setterm blank 0
-setterm powerdown 0
-
 # Enable Nvidia GPU support if detected
 if which nvidia-smi; then
   export LIBGL_KOPPER_DRI2=1
   export MESA_LOADER_DRIVER_OVERRIDE=zink
   export GALLIUM_DRIVER=zink
 fi
+
+setterm blank 0
+setterm powerdown 0
+
+# change cinnamon settings
+gsettings set org.cinnamon.desktop.lockdown disable-lock-screen true
+gsettings set org.cinnamon.desktop.lockdown disable-log-out true
+gsettings set org.cinnamon.desktop.screensaver lock-enabled false
+gsettings set org.cinnamon.desktop.session idle-delay 0
 
 # create user folders
 if [ ! -f "$HOME/.firstsetup" ]; then
