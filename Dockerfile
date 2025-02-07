@@ -23,31 +23,32 @@ RUN \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_icon_48x48.ico && \
   echo "**** install packages ****" && \
   dnf install -y --setopt=install_weak_deps=False --best \
-    firefox \
-    dolphin \
-    gwenview \
-    ark \
-    dragon \
-    spectacle \
-    kcalc \
-    kwrite \
-    plasma-systemmonitor \
-    konsole5 \
-    ksystemstats \
-    kfind \
-    breeze-gtk-gtk3 \
-    breeze-gtk-gtk4 \
-    kdialog \
-    kmenuedit \
-    kde-gtk-config \
-    kde-settings-pulseaudio \
-    kde-wallpapers \
+    xdg-user-dirs \
     plasma-breeze \
     plasma-desktop \
     plasma-workspace-xorg \
+    qt5-qtscript \
+    breeze-gtk-gtk3 \
+    breeze-gtk-gtk4 \
+    kde-gtk-config \
+    breeze-icon-theme \
+    kde-wallpapers \
     kdeplasma-addons \
     plasma-browser-integration \
-    qt5-qtscript && \
+    kde-settings-pulseaudio \
+    kdialog \
+    kfind \
+    kmenuedit \
+    ksystemstats \
+    kwrite \
+    plasma-systemmonitor \
+    konsole5 \
+    kcalc \
+    dolphin \
+    gwenview \
+    dragon \
+    spectacle \
+    firefox && \
   echo "**** kde tweaks ****" && \
   sed -i \
     's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
