@@ -16,22 +16,18 @@ gsettings set org.cinnamon.desktop.lockdown disable-log-out true
 gsettings set org.cinnamon.desktop.screensaver lock-enabled false
 gsettings set org.cinnamon.desktop.session idle-delay 0
 
-# create user folders
-if [ ! -f "$HOME/.firstsetup" ]; then
-    mkdir -p $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
-    chown abc:abc $HOME/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+# set user folders
+mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
 
-    xdg-user-dirs-update --set DESKTOP $HOME/Desktop
-    xdg-user-dirs-update --set DOCUMENTS $HOME/Documents
-    xdg-user-dirs-update --set DOWNLOAD $HOME/Downloads
-    xdg-user-dirs-update --set MUSIC $HOME/Music
-    xdg-user-dirs-update --set PICTURES $HOME/Pictures
-    xdg-user-dirs-update --set PUBLICSHARE $HOME/Public
-    xdg-user-dirs-update --set TEMPLATES $HOME/Templates
-    xdg-user-dirs-update --set VIDEOS $HOME/Videos
+export XDG_DESKTOP_DIR=/config/Desktop
+export XDG_DOCUMENTS_DIR=/config/Documents
+export XDG_DOWNLOAD_DIR=/config/Downloads
+export XDG_MUSIC_DIR=/config/Music
+export XDG_PICTURES_DIR=/config/Pictures
+export XDG_PUBLICSHARE_DIR=/config/Public
+export XDG_TEMPLATES_DIR=/config/Templates
+export XDG_VIDEOS_DIR=/config/Videos
+xdg-user-dirs-update
 
-    touch $HOME/.firstsetup
-fi
-
-
+# launch DE
 /usr/bin/cinnamon-session > /dev/null 2>&1
