@@ -34,21 +34,30 @@ RUN \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
+    mesa-utils \
+    xdg-desktop-portal \
     ubuntucinnamon-environment \
     ubuntucinnamon-wallpapers \
-    yaru-cinnamon-theme-icon \
     yaru-cinnamon-theme-gtk \
+    yaru-cinnamon-theme-icon \
+    yaru-theme-icon \
+    yaru-theme-sound \
+    adwaita-icon-theme \
     gnome-system-monitor \
+    gnome-terminal \
     gnome-calculator \
     gnome-calendar \
-    gnome-terminal \
+    nemo \
     firefox \
     rhythmbox \
-    eog \
     gedit \
+    eog \
     evince \
-    file-roller \
-    celluloid && \
+    celluloid \
+    file-roller && \
+  echo "**** remove un-needed packages ****" && \
+  apt-get remove -y \
+    snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
