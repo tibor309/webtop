@@ -32,37 +32,34 @@ RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     dbus-x11 \
-    dolphin \
-    firefox \
-    gwenview \
-    ark \
-    haruna \
-    kde-spectacle \
-    kcalc \
-    kwrite \
-    konsole \
-    ksystemstats \
-    systemsettings \
-    kfind \
-    khotkeys \
-    breeze-gtk-theme \
-    kde-config-gtk-style \
-    kdialog \
-    kio-extras \
-    knewstuff-dialog \
+    xdg-desktop-portal \
     kubuntu-desktop \
     kubuntu-settings-desktop \
     kubuntu-wallpapers \
-    kubuntu-web-shortcuts \
-    kwin-addons \
-    kwin-x11 \
+    breeze-gtk-theme \
+    kde-config-gtk-style \
+    breeze-icon-theme \
+    qml-module-qt-labs-platform \
     plasma-desktop \
     plasma-workspace \
-    plasma-widgets-addons \
+    kwin-addons \
+    kwin-x11 \
     plasma-browser-integration \
-    plymouth-theme-kubuntu-logo \
-    plymouth-theme-kubuntu-text \
-    qml-module-qt-labs-platform && \
+    kdialog \
+    kio-extras \
+    knewstuff-dialog \
+    kfind \
+    khotkeys \
+    systemsettings \
+    ksystemstats \
+    kwrite \
+    konsole \
+    kcalc \
+    dolphin \
+    gwenview \
+    haruna \
+    kde-spectacle \
+    firefox && \
   echo "**** kde tweaks ****" && \
   sed -i \
     's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
