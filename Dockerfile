@@ -23,40 +23,38 @@ RUN \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_icon_48x48.ico && \
   echo "**** install packages ****" && \
   dnf install -y --setopt=install_weak_deps=False --best \
-    firefox \
-    mousepad \
-    Thunar \
-    galculator \
-    xarchiver \
-    ristretto \
-    parole \
-    claws-mail \
     xdg-user-dirs \
+    fedora-release-xfce \
+    fedora-logos \
     desktop-backgrounds-compat \
+    gtk-xfce-engine \
     greybird-dark-theme \
     greybird-xfwm4-theme \
     adwaita-gtk2-theme \
     adwaita-icon-theme \
     adwaita-cursor-theme \
-    gtk-xfce-engine \
-    fedora-release-xfce \
-    fedora-logos \
-    xfce4-about \
-    xfce4-appfinder \
-    xfce4-datetime-plugin \
-    xfce4-panel \
-    xfce4-places-plugin \
-    xfce4-pulseaudio-plugin \
-    xfce4-session \
-    xfce4-settings \
-    xfce4-terminal \
-    xfce4-taskmanager \
-    xfce4-screenshooter \
-    xfce4-screenshooter-plugin \
     xfconf \
     xfdesktop \
     xfwm4 \
-    xfwm4-themes && \
+    xfwm4-themes \
+    xfce4-session \
+    xfce4-pulseaudio-plugin \
+    xfce4-panel \
+    xfce4-settings \
+    xfce4-taskmanager \
+    xfce4-terminal \
+    xfce4-screenshooter \
+    xfce4-screenshooter-plugin \
+    xfce4-appfinder \
+    xfce4-datetime-plugin \
+    xfce4-places-plugin \
+    xfce4-about \
+    Thunar \
+    firefox \
+    mousepad \
+    galculator \
+    ristretto \
+    parole && \
   echo "**** xfce tweaks ****" && \
   rm -f \
     /etc/xdg/autostart/xfce-polkit.desktop && \
