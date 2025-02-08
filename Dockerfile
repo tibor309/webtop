@@ -34,23 +34,25 @@ RUN \
     fonts-ubuntu \
     xdg-user-dirs \
     xfce4 \
+    xubuntu-default-settings \
     xubuntu-wallpapers \
     xubuntu-artwork \
     xubuntu-icon-theme \
     adwaita-icon-theme \
     dmz-cursor-theme \
-    xubuntu-default-settings \
+    xfce4-session \
+    xfce4-indicator-plugin \
+    xfce4-panel \
+    xfce4-settings \
+    xfce4-taskmanager \
+    xfce4-terminal \
+    xfce4-screenshooter \
+    thunar \
     firefox \
     mousepad \
-    thunar \
     mate-calc \
-    engrampa \
     ristretto \
-    parole \
-    xfce4-indicator-plugin \
-    xfce4-screenshooter \
-    xfce4-taskmanager \
-    xfce4-terminal && \
+    parole && \
   echo "**** xfce tweaks ****" && \
   rm -f \
     /etc/xdg/autostart/xscreensaver.desktop && \
