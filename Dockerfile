@@ -34,7 +34,6 @@ RUN \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
-    mesa-utils \
     xdg-desktop-portal \
     ubuntucinnamon-environment \
     ubuntucinnamon-wallpapers \
