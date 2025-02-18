@@ -8,6 +8,7 @@ You can choose from these distros and desktops.
 | :--- | :--- |
 | **Ubuntu** | [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo] [![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo] [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo] [![ubuntu-xfce][ubuntu-xfce-badge]][ubuntu-xfce-repo] [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo] |
 | **Fedora** | [![fedora-kde][fedora-kde-badge]][fedora-kde-repo] [![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo] |
+| **Zorin OS** | [![zorin-core][zorin-core-badge]][zorin-core-repo] |
 
 ## Setup
 To setup the container, you can use the docker cli, or docker compose. Don't forget to change the image tag to your desired desktop variant!
@@ -96,6 +97,7 @@ To access the container, navigate to the ip address for your machine with the po
 [ubuntu-xfce-badge]: https://img.shields.io/badge/Xubuntu-0044AA.svg?style=for-the-badge&logo=Xubuntu&logoColor=white
 [fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
 [fedora-kde-badge]: https://img.shields.io/badge/Fedora%20kde%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
+[zorin-core-badge]: https://img.shields.io/badge/Zorin%20OS%20Core-15A6F0.svg?style=for-the-badge&logo=Zorin&logoColor=white
 
 [ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
 [ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
@@ -104,3 +106,4 @@ To access the container, navigate to the ip address for your machine with the po
 [ubuntu-xfce-repo]: https://github.com/tibor309/webtop/tree/xubuntu
 [fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
 [fedora-kde-repo]: https://github.com/tibor309/webtop/tree/fedora-kde
+[zorin-core-repo]: https://github.com/tibor309/webtop/tree/zorinos-core
