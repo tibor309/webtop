@@ -1,5 +1,7 @@
 # 🖥️ Zorin OS Core
 
+![zorinos-core](https://github.com/user-attachments/assets/15af73a7-94b3-46c3-a458-1ae4eeb2cc2e)
+
 ## Setup
 To use this desktop, change the docker image tag to `zorinos-core`. For setup options, go back to the [main page][setup].
 
