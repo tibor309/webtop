@@ -1,12 +1,43 @@
-name: "Manual rebuild"
+name: "Build Docker image"
 on:
-  [workflow_dispatch]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Select a distro and desktop to build"
+        required: true
+        default: "ubuntu-cinnamon"
+        type: choice
+        options:
+          - ubuntu
+          - ubuntu-vanilla
+          - ubuntu-cinnamon
+          - kubuntu
+          - xubuntu
+          - fedora-kde
+          - fedora-xfce
+          - zorinos-core
 
 permissions:
       contents: read
       packages: write
 
 jobs:
+  get-tags:
+    runs-on: ubuntu-latest
+    outputs:
+      image_tags: ${{ steps.set-tags.outputs.TAGS }}
+    steps:
+      - name: Determine image tags
+        id: set-tags
+        run: |
+          if [[ "${{ inputs.branch }}" == "ubuntu-cinnamon" ]]; then
+            echo "TAGS=ghcr.io/tibor309/webtop:latest,ghcr.io/tibor309/webtop:ubuntu-cinnamon" >> $GITHUB_OUTPUT
+          else
+            echo "TAGS=ghcr.io/tibor309/webtop:${{ inputs.branch }}" >> $GITHUB_OUTPUT
+          fi
+          echo "Image tag(s): $TAGS"
+
+
   get-date:
     runs-on: ubuntu-latest
     outputs:
@@ -21,10 +52,12 @@ jobs:
 
   rebuild:
     runs-on: ubuntu-latest
-    needs: get-date
+    needs: [get-tags, get-date]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -49,5 +82,4 @@ jobs:
           build-args: |
             IMAGE_BUILD_DATE=${{ needs.get-date.outputs.IMG_DATE }}
           tags: |
-            ghcr.io/tibor309/webtop:latest
-            ghcr.io/tibor309/webtop:ubuntu-cinnamon
+            ${{ needs.get-tags.outputs.image_tags }}
