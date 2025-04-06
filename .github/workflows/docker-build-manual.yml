@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: "Select a distro and desktop to build"
+        description: "Select a desktop to build"
         required: true
         default: "ubuntu-cinnamon"
         type: choice
