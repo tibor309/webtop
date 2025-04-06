@@ -18,8 +18,8 @@ on:
           - zorinos-core
 
 permissions:
-      contents: read
-      packages: write
+  contents: read
+  packages: write
 
 jobs:
   get-tags:
