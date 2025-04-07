@@ -1,4 +1,4 @@
-name: "Manual rebuild"
+name: "Build Docker Image for Xubuntu"
 on:
   [workflow_dispatch]
 
