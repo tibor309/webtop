@@ -19,7 +19,6 @@ ENV TITLE="Zorin OS Core"
 ARG DEBIAN_FRONTEND="noninteractive"
 
 # set package preferences
-COPY /root/etc/apt/preferences.d/mozilla.pref /etc/apt/preferences.d/mozilla.pref
 COPY /root/etc/apt/preferences.d/zorin-os-patches.pref /etc/apt/preferences.d/zorin-os-patches.pref
 COPY /root/etc/apt/preferences.d/zorinos-patches.pref /etc/apt/preferences.d/zorinos-patches.pref
 
@@ -37,9 +36,9 @@ RUN \
   echo "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" | tee -a /etc/apt/sources.list.d/zorinos-stable.list && \
   echo "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" | tee /etc/apt/sources.list.d/zorinos-patches.list && \
   echo "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" | tee -a /etc/apt/sources.list.d/zorinos-patches.list && \
-  echo "**** add mozilla package sources ****" && \
-  curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | tee /etc/apt/keyrings/packages.mozilla.org.asc && \
-  echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | tee -a /etc/apt/sources.list.d/mozilla.list && \
+  echo "**** add brave package sources ****" && \
+  curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
+  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
@@ -70,7 +69,7 @@ RUN \
     zorin-appearance \
     zorin-appearance-layouts-shell-core \
     alacarte \
-    firefox \
+    brave-browser \
     rhythmbox \
     gedit \
     eog \
