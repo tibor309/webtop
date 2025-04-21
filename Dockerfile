@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:fedora40
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:fedora41
 
 # set labels
 ARG IMAGE_BUILD_DATE
