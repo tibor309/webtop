@@ -1,4 +1,31 @@
-# 🖥️ Webtop
+[repo]: https://github.com/tibor309/webtop
+[dhub]: https://hub.docker.com/r/tibordev/webtop
+[dcompose]: https://docs.linuxserver.io/general/docker-compose
+[dcli]: https://docs.docker.com/engine/reference/commandline/cli/
+[tz]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+[link]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+[ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-vanilla-gnome-badge]: https://img.shields.io/badge/Ubuntu%20Vanilla-4A86CF?style=for-the-badge&logo=ubuntu&logoColor=white
+[ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
+[ubuntu-xfce-badge]: https://img.shields.io/badge/Xubuntu-0044AA.svg?style=for-the-badge&logo=Xubuntu&logoColor=white
+[fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
+[fedora-kde-badge]: https://img.shields.io/badge/Fedora%20kde%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
+[zorin-core-badge]: https://img.shields.io/badge/Zorin%20OS%20Core-15A6F0.svg?style=for-the-badge&logo=Zorin&logoColor=white
+
+[ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
+[ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
+[ubuntu-vanilla-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu-vanilla
+[ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
+[ubuntu-xfce-repo]: https://github.com/tibor309/webtop/tree/xubuntu
+[fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
+[fedora-kde-repo]: https://github.com/tibor309/webtop/tree/fedora-kde
+[zorin-core-repo]: https://github.com/tibor309/webtop/tree/zorinos-core
+
+
+
+# 🖥️ [Webtop][repo]
 Linux containers with full desktop environments accessible trough a web browser.
 
 ## Desktops
@@ -12,6 +39,9 @@ You can choose from these distros and desktops.
 
 ## Setup
 To setup the container, you can use the docker cli, or docker compose. Don't forget to change the image tag to your desired desktop variant!
+
+> [!NOTE]
+> This image is also available on [Docker Hub][dhub] at `tibordev/webtop`.
 
 ### [docker-compose][dcompose] (recommended)
 ```yaml
@@ -83,27 +113,3 @@ To access the container, navigate to the ip address for your machine with the po
 
 * [http://yourhost:3000/][link]
 * [https://yourhost:3001/][link]
-
-[dcompose]: https://docs.linuxserver.io/general/docker-compose
-[dcli]: https://docs.docker.com/engine/reference/commandline/cli/
-[tz]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
-[link]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-
-
-[ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-vanilla-gnome-badge]: https://img.shields.io/badge/Ubuntu%20Vanilla-4A86CF?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
-[ubuntu-xfce-badge]: https://img.shields.io/badge/Xubuntu-0044AA.svg?style=for-the-badge&logo=Xubuntu&logoColor=white
-[fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
-[fedora-kde-badge]: https://img.shields.io/badge/Fedora%20kde%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
-[zorin-core-badge]: https://img.shields.io/badge/Zorin%20OS%20Core-15A6F0.svg?style=for-the-badge&logo=Zorin&logoColor=white
-
-[ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
-[ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
-[ubuntu-vanilla-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu-vanilla
-[ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
-[ubuntu-xfce-repo]: https://github.com/tibor309/webtop/tree/xubuntu
-[fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
-[fedora-kde-repo]: https://github.com/tibor309/webtop/tree/fedora-kde
-[zorin-core-repo]: https://github.com/tibor309/webtop/tree/zorinos-core
