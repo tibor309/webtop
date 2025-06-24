@@ -12,6 +12,9 @@ LABEL org.opencontainers.image.url=https://github.com/tibor309/webtop/packages
 LABEL org.opencontainers.image.licenses=GPL-3.0
 LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy"
 
+# branding
+ENV LSIO_FIRST_PARTY=false
+
 # title
 ENV TITLE="Zorin OS Core"
 
