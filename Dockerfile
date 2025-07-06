@@ -24,7 +24,7 @@ ENV TITLE="Ubuntu Cinnamon"
 ARG DEBIAN_FRONTEND="noninteractive"
 
 # prevent Ubuntu's firefox stub from being installed
-COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
+COPY /root/etc/apt/preferences.d/mozilla /etc/apt/preferences.d/mozilla
 
 RUN \
   echo "**** add icon ****" && \
@@ -35,7 +35,12 @@ RUN \
     /kclient/public/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_icon_32x32.ico && \
   echo "**** add package sources ****" && \
-  add-apt-repository -y ppa:mozillateam/ppa && \
+  curl -vSLo \
+    /etc/apt/keyrings/packages.mozilla.org.asc \
+    https://packages.mozilla.org/apt/repo-signing-key.gpg && \
+  echo \
+    "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" \
+    > /etc/apt/sources.list.d/mozilla.list && \
   add-apt-repository -y ppa:ubuntucinnamonremix/all && \
   echo "**** install packages ****" && \
   apt-get update -y && \
