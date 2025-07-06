@@ -23,7 +23,7 @@ ENV TITLE="Zorin OS Core"
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# set package preferences
+# add zorin patches
 COPY /root/etc/apt/preferences.d/zorin-os-patches.pref /etc/apt/preferences.d/zorin-os-patches.pref
 COPY /root/etc/apt/preferences.d/zorinos-patches.pref /etc/apt/preferences.d/zorinos-patches.pref
 
@@ -36,14 +36,29 @@ RUN \
     /kclient/public/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/zorin/zorin_blue_favicon.ico && \
   echo "**** add zorin os package sources ****" && \
-  curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xb2228b8cca5c00a2c59d35e530fcf8f64f71b61c" | gpg --dearmor | tee /usr/share/keyrings/zorinos-archive-keyring.gpg  && \
-  echo "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" | tee /etc/apt/sources.list.d/zorinos-stable.list && \
-  echo "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" | tee -a /etc/apt/sources.list.d/zorinos-stable.list && \
-  echo "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" | tee /etc/apt/sources.list.d/zorinos-patches.list && \
-  echo "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" | tee -a /etc/apt/sources.list.d/zorinos-patches.list && \
+  curl -vSL \
+    "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xb2228b8cca5c00a2c59d35e530fcf8f64f71b61c" | \
+    gpg --dearmor | \
+    tee -a /usr/share/keyrings/zorinos-archive-keyring.gpg && \
+  echo \
+    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" \
+    > /etc/apt/sources.list.d/zorinos-stable.list && \
+  echo \
+    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" \
+    >> /etc/apt/sources.list.d/zorinos-stable.list && \
+  echo \
+    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" \
+    > /etc/apt/sources.list.d/zorinos-patches.list && \
+  echo \
+    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" \
+    >> /etc/apt/sources.list.d/zorinos-patches.list && \
   echo "**** add brave package sources ****" && \
-  curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
-  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list && \
+  curl -vSLo \
+    /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+    https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
+  echo \
+    "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \ 
+    > /etc/apt/sources.list.d/brave-browser-release.list && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
