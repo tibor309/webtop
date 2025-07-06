@@ -60,3 +60,4 @@ jobs:
             IMAGE_BUILD_DATE=${{ needs.get_date.outputs.IMG_DATE }}
           tags: |
             ghcr.io/tibor309/webtop:fedora-kde
+            tibordev/webtop:fedora-kde
