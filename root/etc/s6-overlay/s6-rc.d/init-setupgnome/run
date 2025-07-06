@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-# fixes for gnome
+# Fixes for GNOME
 for file in $(find /usr -type f -iname "*login1*"); do rm -v $file; done
 echo -e "\n\nexport $(dbus-launch)\nexport XDG_CURRENT_DESKTOP=ubuntu:GNOME\nexport XDG_DATA_DIRS=/usr/local/share:/usr/share\nexport XDG_SESSION_TYPE=x11\nexport DESKTOP_SESSION=ubuntu\nexport GNOME_SHELL_SESSION_MODE=ubuntu" >> /etc/profile
 
-# start dbus
+# Start DBus
 service dbus start
