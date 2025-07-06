@@ -1,41 +1,45 @@
 #!/bin/bash
 
-# enable nvidia gpu support if detected
+# Enable Nvidia GPU support if detected
 if which nvidia-smi; then
   export LIBGL_KOPPER_DRI2=1
   export MESA_LOADER_DRIVER_OVERRIDE=zink
   export GALLIUM_DRIVER=zink
 fi
 
+# Disable sleep and power off
 setterm blank 0
 setterm powerdown 0
 
-# change gnome settings
+# Change GNOME settings
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.lockdown disable-log-out true
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 
-# set session
-export XDG_SESSION_TYPE=x11
-export DESKTOP_SESSION=ubuntu
-export GNOME_SHELL_SESSION_MODE=ubuntu
-export XDG_CURRENT_DESKTOP=ubuntu:GNOME
-export XDG_DATA_DIRS=/usr/local/share:/usr/share
+# Set up session
+export XDG_SESSION_TYPE="x11"
+export DESKTOP_SESSION="ubuntu"
+export GNOME_SHELL_SESSION_MODE="ubuntu"
+export XDG_CURRENT_DESKTOP="ubuntu:GNOME"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export $(dbus-launch)
 
-# set user folders
-mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+# Create user directories
+for dir in Desktop Documents Downloads Music Pictures Public Templates Videos; do
+  [ -d "${HOME}/$dir" ] || mkdir -p "${HOME}/$dir"
+done
 
-export XDG_DESKTOP_DIR=/config/Desktop
-export XDG_DOCUMENTS_DIR=/config/Documents
-export XDG_DOWNLOAD_DIR=/config/Downloads
-export XDG_MUSIC_DIR=/config/Music
-export XDG_PICTURES_DIR=/config/Pictures
-export XDG_PUBLICSHARE_DIR=/config/Public
-export XDG_TEMPLATES_DIR=/config/Templates
-export XDG_VIDEOS_DIR=/config/Videos
+# Set up XDG user directories
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 xdg-user-dirs-update
 
-# launch DE
+# Stat DE
 /usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
