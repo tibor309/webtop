@@ -1,12 +1,16 @@
+[ubuntu]: https://ubuntu.com/desktop
+[main]: https://github.com/tibor309/webtop?tab=readme-ov-file#setup
+
+
 # 🖥️ Ubuntu
+[Ubuntu Desktop][ubuntu] is a popular open-source operating system designed for personal computers and laptops. It offers a user-friendly interface and a wide range of software options, making it suitable for both new and experienced users.
+
 ![ubuntu](https://github.com/user-attachments/assets/9d8e0d79-d997-45c9-a955-81f6356ae3b7)
 
 ## Setup
-To use this desktop, change the docker image tag to `ubuntu`. For setup options, go back to the [main page][setup].
 
-> [!NOTE]
+> [!WARNING]
 > * The GNOME desktop environment is a bit unstable in this configuration.
-> * Ubuntu's custom themes are not applied correctly. You can fix this, by creating your own gtk3 and gtk4 configs.
+> * Desktop themes might not work correctly. You can fix this, by creating your own gtk3 and gtk4 configs.
 
-
-[setup]: https://github.com/tibor309/webtop?tab=readme-ov-file#setup
+To use this desktop, change the docker image tag to `ubuntu`. For setup options and configuration, check the [main page][main].
