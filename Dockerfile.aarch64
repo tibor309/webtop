@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-fedora41
+FROM ghcr.io/linuxserver/baseimage-selkies:arm64v8-fedora42
 
 # set labels
 ARG IMAGE_BUILD_DATE
@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
 LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
 LABEL org.opencontainers.image.licenses="GPL-3.0"
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
-LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-fedora41"
+LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-selkies:arm64v8-fedora42"
 LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-webtop/blob/master/README.md"
 
 # branding
@@ -23,10 +23,10 @@ ENV TITLE="Fedora KDE"
 RUN \
   echo "**** add icon ****" && \
   curl -o \
-    /kclient/public/icon.png \
+    /usr/share/selkies/www/icon.png \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_logo_256x251.png && \
   curl -o \
-    /kclient/public/favicon.ico \
+    /usr/share/selkies/www/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_icon_48x48.ico && \
   echo "**** install packages ****" && \
   dnf install -y --setopt=install_weak_deps=False --best \
