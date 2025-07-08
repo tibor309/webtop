@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
 
 # set labels
 ARG IMAGE_BUILD_DATE
@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
 LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
 LABEL org.opencontainers.image.licenses="GPL-3.0"
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
-LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble"
+LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-selkies:ubuntunoble"
 LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-webtop/blob/master/README.md"
 
 # branding
@@ -24,18 +24,24 @@ ENV TITLE="Kubuntu"
 ARG DEBIAN_FRONTEND="noninteractive"
 
 # prevent Ubuntu's firefox stub from being installed
-COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
+COPY /root/etc/apt/preferences.d/mozilla /etc/apt/preferences.d/mozilla
 
 RUN \
   echo "**** add icon ****" && \
   curl -o \
-    /kclient/public/icon.png \
+    /usr/share/selkies/www/icon.png \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_logo_256x256.png && \
   curl -o \
-    /kclient/public/favicon.ico \
+    /usr/share/selkies/www/favicon.ico \
     https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_icon_32x32.ico && \
+  echo "**** add package sources ****" && \
+  curl -vSLo \
+    /etc/apt/keyrings/packages.mozilla.org.asc \
+    https://packages.mozilla.org/apt/repo-signing-key.gpg && \
+  echo \
+    "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" \
+    > /etc/apt/sources.list.d/mozilla.list && \
   echo "**** install packages ****" && \
-  add-apt-repository -y ppa:mozillateam/ppa && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     dbus-x11 \
