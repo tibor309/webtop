@@ -19,6 +19,12 @@ if [ ! -f $HOME/.config/kdeglobals ]; then
   kwriteconfig6 --file $HOME/.config/kdeglobals --group KDE --key LookAndFeelPackage org.fedoraproject.fedora.desktop
 fi
 
+# Directories
+sudo rm -f /usr/share/dbus-1/system-services/org.freedesktop.UDisks2.service
+mkdir -p "${HOME}/.config/autostart" "${HOME}/.XDG" "${HOME}/.local/share/"
+chmod 700 "${HOME}/.XDG"
+touch "${HOME}/.local/share/user-places.xbel"
+
 # Create user directories
 for dir in Desktop Documents Downloads Music Pictures Public Templates Videos; do
   [ -d "${HOME}/$dir" ] || mkdir -p "${HOME}/$dir"
@@ -40,8 +46,8 @@ if [ ! -d $HOME/.config/kde.org ]; then
   (
     loop_end_time=$((SECONDS + 30))
     while [ $SECONDS -lt $loop_end_time ]; do
-        find "$HOME/.cache" "$HOME/.config" "$HOME/.local" -type f -perm 000 -exec chmod 644 {} + 2>/dev/null
-        sleep .1
+      find "$HOME/.cache" "$HOME/.config" "$HOME/.local" -type f -perm 000 -exec chmod 644 {} + 2>/dev/null
+      sleep .1
     done
   ) &
 fi
