@@ -1,4 +1,5 @@
 name: "Build Docker image - fedora-kde"
+description: "Builds the Docker image for the Fedora KDE Plasma Webtop and pushes it to the GitHub Container Registry and Docker Hub."
 on:
   [workflow_dispatch]
 
