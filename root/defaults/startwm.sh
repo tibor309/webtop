@@ -7,21 +7,25 @@ if which nvidia-smi; then
   export GALLIUM_DRIVER=zink
 fi
 
+# Disable sleep and power off
 setterm blank 0
 setterm powerdown 0
 
-# set user folders
-mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+# Create user directories
+for dir in Desktop Documents Downloads Music Pictures Public Templates Videos; do
+  [ -d "${HOME}/$dir" ] || mkdir -p "${HOME}/$dir"
+done
 
-export XDG_DESKTOP_DIR=/config/Desktop
-export XDG_DOCUMENTS_DIR=/config/Documents
-export XDG_DOWNLOAD_DIR=/config/Downloads
-export XDG_MUSIC_DIR=/config/Music
-export XDG_PICTURES_DIR=/config/Pictures
-export XDG_PUBLICSHARE_DIR=/config/Public
-export XDG_TEMPLATES_DIR=/config/Templates
-export XDG_VIDEOS_DIR=/config/Videos
+# Set up XDG user directories
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 xdg-user-dirs-update
 
-# launch de
+# Stat DE
 /usr/bin/xfce4-session > /dev/null 2>&1
