@@ -29,11 +29,11 @@ COPY /root/etc/apt/preferences.d/mozilla /etc/apt/preferences.d/mozilla
 RUN \
   echo "**** add icon ****" && \
   curl -o \
-    /usr/share/selkies/www/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_logo_256x256.png && \
+    /kclient/public/icon.png \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/kubuntu/icon.png && \
   curl -o \
-    /usr/share/selkies/www/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/kubuntu/kubuntu_icon_32x32.ico && \
+    /kclient/public/favicon.ico \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/kubuntu/favicon.ico && \
   echo "**** add package sources ****" && \
   curl -vSLo \
     /etc/apt/keyrings/packages.mozilla.org.asc \
