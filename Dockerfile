@@ -12,7 +12,7 @@ LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
 LABEL org.opencontainers.image.licenses="GPL-3.0"
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
 LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-selkies:ubuntunoble"
-LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-webtop/blob/master/README.md"
+LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-selkies/blob/master/README.md"
 
 # branding
 ENV LSIO_FIRST_PARTY=false
