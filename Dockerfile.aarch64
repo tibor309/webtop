@@ -30,10 +30,10 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_logo_256x256.png && \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/ubuntu-cinnamon/icon.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_icon_32x32.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/ubuntu-cinnamon/favicon.ico && \
   echo "**** add package sources ****" && \
   curl -vSLo \
     /etc/apt/keyrings/packages.mozilla.org.asc \
