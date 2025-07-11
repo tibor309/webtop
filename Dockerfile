@@ -24,10 +24,10 @@ RUN \
   echo "**** add icon ****" && \
   curl -o \
     /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_logo_256x251.png && \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/fedora/icon.png && \
   curl -o \
     /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/main/icons/fedora/fedora_icon_48x48.ico && \
+    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/fedora/favicon.ico && \
   echo "**** install packages ****" && \
   dnf install -y --setopt=install_weak_deps=False --best \
     xdg-user-dirs \
