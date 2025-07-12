@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-ubuntujammy
+FROM ghcr.io/linuxserver/baseimage-selkies:arm64v8-debianbookworm
 
 # set labels
 ARG IMAGE_BUILD_DATE
@@ -11,59 +11,52 @@ LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
 LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
 LABEL org.opencontainers.image.licenses="GPL-3.0"
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
-LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-ubuntujammy"
-LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-webtop/blob/master/README.md"
+LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-selkies:arm64v8-debianbookworm"
+LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-selkies/blob/master/README.md"
 
 # branding
 ENV LSIO_FIRST_PARTY=false
 
 # title
-ENV TITLE="Ubuntu Cinnamon"
+ENV TITLE="Debian KDE"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# prevent Ubuntu's firefox stub from being installed
-COPY /root/etc/apt/preferences.d/firefox-no-snap /etc/apt/preferences.d/firefox-no-snap
-
 RUN \
-  echo "**** add icon ****" && \
-  curl -o \
-    /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_logo_256x256.png && \
-  curl -o \
-    /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/master/icons/ubuntu-cinnamon/ubuntu_cinnamon_icon_32x32.ico && \
-  echo "**** add package sources ****" && \
-  add-apt-repository -y ppa:mozillateam/ppa && \
-  add-apt-repository -y ppa:ubuntucinnamonremix/all && \
   echo "**** install packages ****" && \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
-    fonts-ubuntu \
+    dbus-x11 \
     xdg-desktop-portal \
-    ubuntucinnamon-environment \
-    ubuntucinnamon-wallpapers \
-    yaru-cinnamon-theme-gtk \
-    yaru-cinnamon-theme-icon \
-    yaru-theme-icon \
-    yaru-theme-sound \
-    adwaita-icon-theme \
-    gnome-system-monitor \
-    gnome-terminal \
-    gnome-calculator \
-    gnome-calendar \
-    nemo \
-    firefox \
-    rhythmbox \
-    gedit \
-    eog \
-    evince \
-    celluloid \
-    file-roller && \
-  echo "**** remove un-needed packages ****" && \
-  apt-get remove -y \
-    snapd && \
+    plasma-desktop \
+    plasma-workspace \
+    breeze-gtk-theme \
+    kde-config-gtk-style \
+    breeze-icon-theme \
+    qml-module-qt-labs-platform \
+    plasma-browser-integration \
+    kwin-addons \
+    kwin-x11 \
+    kdialog \
+    kfind \
+    khotkeys \
+    kio-extras \
+    knewstuff-dialog \
+    konsole \
+    systemsettings \
+    ksystemstats \
+    kcalc \
+    kwrite \    
+    dolphin \
+    gwenview \
+    haruna \
+    kde-spectacle \
+    firefox-esr && \
+  echo "**** kde tweaks ****" && \
+  sed -i \
+    's/applications:org.kde.discover.desktop,/applications:org.kde.konsole.desktop,/g' \
+    /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
