@@ -1,33 +1,67 @@
 #!/bin/bash
 
 # Enable Nvidia GPU support if detected
-if which nvidia-smi; then
+if which nvidia-smi && [ "${DISABLE_ZINK}" == "false" ]; then
   export LIBGL_KOPPER_DRI2=1
   export MESA_LOADER_DRIVER_OVERRIDE=zink
   export GALLIUM_DRIVER=zink
 fi
 
+# Disable sleep and power off
 setterm blank 0
 setterm powerdown 0
 
-# change cinnamon settings
-gsettings set org.cinnamon.desktop.lockdown disable-lock-screen true
-gsettings set org.cinnamon.desktop.lockdown disable-log-out true
-gsettings set org.cinnamon.desktop.screensaver lock-enabled false
-gsettings set org.cinnamon.desktop.session idle-delay 0
+# Disable screen lock
+if [ ! -f $HOME/.config/kscreenlockerrc ]; then
+  kwriteconfig5 --file $HOME/.config/kscreenlockerrc --group Daemon --key Autolock false
+fi
 
-# set user folders
-mkdir -p /config/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+# Directories
+sudo rm -f /usr/share/dbus-1/system-services/org.freedesktop.UDisks2.service
+mkdir -p "${HOME}/.config/autostart" "${HOME}/.XDG" "${HOME}/.local/share/"
+chmod 700 "${HOME}/.XDG"
+touch "${HOME}/.local/share/user-places.xbel"
 
-export XDG_DESKTOP_DIR=/config/Desktop
-export XDG_DOCUMENTS_DIR=/config/Documents
-export XDG_DOWNLOAD_DIR=/config/Downloads
-export XDG_MUSIC_DIR=/config/Music
-export XDG_PICTURES_DIR=/config/Pictures
-export XDG_PUBLICSHARE_DIR=/config/Public
-export XDG_TEMPLATES_DIR=/config/Templates
-export XDG_VIDEOS_DIR=/config/Videos
+# Create user directories
+for dir in Desktop Documents Downloads Music Pictures Public Templates Videos; do
+  [ -d "${HOME}/$dir" ] || mkdir -p "${HOME}/$dir"
+done
+
+# Set up XDG user directories
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 xdg-user-dirs-update
 
-# launch DE
-/usr/bin/cinnamon-session > /dev/null 2>&1
+# Background perm loop
+if [ ! -d $HOME/.config/kde.org ]; then
+  (
+    loop_end_time=$((SECONDS + 30))
+    while [ $SECONDS -lt $loop_end_time ]; do
+        find "$HOME/.cache" "$HOME/.config" "$HOME/.local" -type f -perm 000 -exec chmod 644 {} + 2>/dev/null
+        sleep .1
+    done
+  ) &
+fi
+
+# Create startup script if it does not exist (keep in sync with openbox)
+STARTUP_FILE="${HOME}/.config/autostart/autostart.desktop"
+if [ ! -f "${STARTUP_FILE}" ]; then
+  echo "[Desktop Entry]" > $STARTUP_FILE
+  echo "Exec=bash /config/.config/openbox/autostart" >> $STARTUP_FILE
+  echo "Icon=dialog-scripts" >> $STARTUP_FILE
+  echo "Name=autostart" >> $STARTUP_FILE
+  echo "Path=" >> $STARTUP_FILE
+  echo "Type=Application" >> $STARTUP_FILE
+  echo "X-KDE-AutostartScript=true" >> $STARTUP_FILE
+  chmod +x $STARTUP_FILE
+fi
+
+# Stat DE
+unset LD_PRELOAD
+/usr/bin/dbus-launch /usr/bin/startplasma-x11 > /dev/null 2>&1
