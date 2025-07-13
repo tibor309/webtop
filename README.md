@@ -12,37 +12,22 @@
 [lsapps]: https://github.com/linuxserver/proot-apps
 [lsapps-support]: https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps
 
-[ubuntu-cinnamon-badge]: https://img.shields.io/badge/Ubuntu%20Cinnamon%20Remix-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-gnome-badge]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-vanilla-gnome-badge]: https://img.shields.io/badge/Ubuntu%20Vanilla-4A86CF?style=for-the-badge&logo=ubuntu&logoColor=white
-[ubuntu-kde-badge]: https://img.shields.io/badge/Kubuntu-0079C1?style=for-the-badge&logo=kubuntu&logoColor=white
-[ubuntu-xfce-badge]: https://img.shields.io/badge/Xubuntu-0044AA.svg?style=for-the-badge&logo=Xubuntu&logoColor=white
-[fedora-xfce-badge]: https://img.shields.io/badge/Fedora%20xfce%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
-[fedora-kde-badge]: https://img.shields.io/badge/Fedora%20kde%20spin-51A2DA?style=for-the-badge&logo=fedora&logoColor=white
-[zorin-core-badge]: https://img.shields.io/badge/Zorin%20OS%20Core-15A6F0.svg?style=for-the-badge&logo=Zorin&logoColor=white
-
-[ubuntu-cinnamon-repo]: https://github.com/tibor309/webtop/tree/ubuntu-cinnamon
-[ubuntu-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu
-[ubuntu-vanilla-gnome-repo]: https://github.com/tibor309/webtop/tree/ubuntu-vanilla
-[ubuntu-kde-repo]: https://github.com/tibor309/webtop/tree/kubuntu
-[ubuntu-xfce-repo]: https://github.com/tibor309/webtop/tree/xubuntu
-[fedora-xfce-repo]: https://github.com/tibor309/webtop/tree/fedora-xfce
-[fedora-kde-repo]: https://github.com/tibor309/webtop/tree/fedora-kde
-[zorin-core-repo]: https://github.com/tibor309/webtop/tree/zorinos-core
-
-
 
 # 🖥️ [Webtop][repo]
 Linux containers with full desktop environments accessible trough any modern web browser.
 
 ## Desktops
-You can choose from these distros and desktops.
-
-| Distro | Flavour |
-| :--- | :--- |
-| **Ubuntu** | [![ubuntu][ubuntu-gnome-badge]][ubuntu-gnome-repo] [![ubuntu-vanilla][ubuntu-vanilla-gnome-badge]][ubuntu-vanilla-gnome-repo] [![ubuntu-kde][ubuntu-kde-badge]][ubuntu-kde-repo] [![ubuntu-xfce][ubuntu-xfce-badge]][ubuntu-xfce-repo] [![ubuntu-cinnamon][ubuntu-cinnamon-badge]][ubuntu-cinnamon-repo] |
-| **Fedora** | [![fedora-kde][fedora-kde-badge]][fedora-kde-repo] [![fedora-xfce][fedora-xfce-badge]][fedora-xfce-repo] |
-| **Zorin OS** | [![zorin-core][zorin-core-badge]][zorin-core-repo] |
+| Distro | Desktop Environment | Tech | Docker image tag |
+| :--- | :--- | :---: | :---: |
+| Debian | KDE Plasma | Selkies | `latest` |
+| Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
+| Ubuntu Vanilla | GNOME | KasmVNC | `ubuntu-vanilla` |
+| Kubuntu | KDE Plasma | Selkies | `kubuntu` |
+| Xubuntu | Xfce | Selkies | `xubuntu` |
+| Ubuntu Cinnamon Remix | Cinnamon | KasmVNC | `ubuntu-cinnamon` |
+| Zorin OS Core | Zorin OS Desktop | KasmVNC | `zorinos-core` |
+| Fedora KDE Plasma Desktop | KDE Plasma | Selkies | `fedora-kde` |
+| Fedora Xfce | Xfce | Selkies | `fedora-xfce`|
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods][lsmods] and configurations to enable additional functionality within the container.
