@@ -24,11 +24,11 @@ Linux containers with full desktop environments accessible trough any modern web
 | Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
 | Ubuntu Vanilla | GNOME | KasmVNC | `ubuntu-vanilla` |
 | Kubuntu | KDE Plasma | Selkies | `kubuntu` |
-| Xubuntu | Xfce | Selkies | `xubuntu` |
-| Ubuntu Cinnamon Remix | Cinnamon | KasmVNC | `ubuntu-cinnamon` |
+| Xubuntu | Xfce | KasmVNC | `xubuntu` |
+| Ubuntu Cinnamon Remix | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
 | Zorin OS Core | Zorin OS Desktop | KasmVNC | `zorinos-core` |
 | Fedora KDE Plasma Desktop | KDE Plasma | Selkies | `fedora-kde` |
-| Fedora Xfce | Xfce | Selkies | `fedora-xfce`|
+| Fedora Xfce | Xfce | KasmVNC | `fedora-xfce`|
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods][lsmods] and configurations to enable additional functionality within the container.
