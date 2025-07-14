@@ -6,6 +6,7 @@
 [tz]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 [link]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
+[lswebtop]: https://github.com/linuxserver/docker-webtop
 [lsmods]: https://github.com/linuxserver/docker-mods
 [lsswag]: https://github.com/linuxserver/docker-swag
 [lsselkies-op]: https://github.com/linuxserver/docker-baseimage-selkies#options
@@ -24,11 +25,14 @@ Linux containers with full desktop environments accessible trough any modern web
 | Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
 | Ubuntu Vanilla | GNOME | KasmVNC | `ubuntu-vanilla` |
 | Kubuntu | KDE Plasma | Selkies | `kubuntu` |
-| Xubuntu | Xfce | KasmVNC | `xubuntu` |
+| Xubuntu | Xfce | KasmVNC | `xubuntu` ⚠ |
 | Ubuntu Cinnamon Remix | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
 | Zorin OS Core | Zorin OS Desktop | KasmVNC | `zorinos-core` |
 | Fedora KDE Plasma Desktop | KDE Plasma | Selkies | `fedora-kde` |
-| Fedora Xfce | Xfce | KasmVNC | `fedora-xfce`|
+| Fedora Xfce | Xfce | KasmVNC | `fedora-xfce` ⚠ |
+
+> [!WARNING]
+> The Ubuntu and Fedora Xfce desktops will be removed soon! Existing builds of the image are going to be still available on the GitHub container registry. If you use them, please migrate over to the [linuxserver.io image][lswebtop] or use another desktop.
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods][lsmods] and configurations to enable additional functionality within the container.
