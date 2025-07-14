@@ -9,6 +9,7 @@
 [lsmods]: https://github.com/linuxserver/docker-mods
 [lsswag]: https://github.com/linuxserver/docker-swag
 [lsselkies-op]: https://github.com/linuxserver/docker-baseimage-selkies#options
+[lskasm-op]: https://github.com/linuxserver/docker-baseimage-kasmvnc#options
 [lsapps]: https://github.com/linuxserver/proot-apps
 [lsapps-support]: https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps
 
@@ -86,7 +87,7 @@ docker run -d \
 By default, this container has no authentication. Configure the optional environment variables `CUSTOM_USER` and `PASSWORD` to enable basic HTTP auth. This should only be used to locally secure the container on a local network. If you're exposing this container to the internet, it's recommended to use a reverse proxy or a VPN such as [SWAG][lsswag] or Tailscale.
 
 ## Config
-Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate `<external>:<internal>` respectively. For example, `-p 8080:80` would expose port `80` from inside the container to be accessible from the host's IP on port `8080` outside the container. Further options can be found on the [Selkies Base Images][lsselkies-op] repo.
+Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate `<external>:<internal>` respectively. For example, `-p 8080:80` would expose port `80` from inside the container to be accessible from the host's IP on port `8080` outside the container. Further options can be found on the [Selkies Base Images][lsselkies-op] or the [KasmVNC Base Images][lskasm-op] repo.
 
 
 | Parameter | Function |
