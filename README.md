@@ -12,4 +12,4 @@ Xubuntu is an elegant and easy to use operating system. Xubuntu comes with Xfce,
 > [!WARNING]
 > This desktop will be removed soon! Existing builds of the image are going to be still available on the GitHub Container Registry. Please migrate over to the [linuxserver.io][lswebtop] image or use another desktop.
 
-To use this desktop, change the docker image tag to `kubuntu`. For setup options and configuration, check the [main page][main].
+To use this desktop, change the docker image tag to `xubuntu`. For setup options and configuration, check the [main page][main].
