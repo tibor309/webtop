@@ -12,4 +12,4 @@ Ubuntu Vanilla is a version of Ubuntu that uses the default, unmodified GNOME de
 > * The GNOME desktop environment is a bit unstable in this configuration.
 > * Desktop themes might not work correctly. You can fix this, by creating your own gtk3 and gtk4 configs.
 
-To use this desktop, change the docker image tag to `zorinos-core`. For setup options and configuration, check the [main page][main].
+To use this desktop, change the docker image tag to `ubuntu-vanilla`. For setup options and configuration, check the [main page][main].
