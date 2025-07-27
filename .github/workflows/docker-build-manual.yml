@@ -1,44 +1,13 @@
-name: "Build Docker image"
-description: "Builds a Docker image for the selected desktop environment and pushes it to the GitHub Container Registry and Docker Hub."
+name: "Build Docker image - debian-kde"
+description: "Builds the Docker image for the Debian KDE Plasma Webtop and pushes it to the GitHub Container Registry and Docker Hub."
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: "Select a desktop to build"
-        required: true
-        default: "ubuntu-cinnamon"
-        type: choice
-        options:
-          - ubuntu
-          - ubuntu-vanilla
-          - ubuntu-cinnamon
-          - kubuntu
-          - xubuntu
-          - fedora-kde
-          - fedora-xfce
-          - zorinos-core
+  [workflow_dispatch]
 
 permissions:
   contents: read
   packages: write
 
 jobs:
-  get_img_tags:
-    name: Determine image tags
-    runs-on: ubuntu-latest
-    outputs:
-      image_tags: ${{ steps.set_img_tags.outputs.TAGS }}
-    steps:
-      - name: Determine image tags
-        id: set_img_tags
-        run: |
-          if [[ "${{ inputs.branch }}" == "ubuntu-cinnamon" ]]; then
-            echo "TAGS=ghcr.io/tibor309/webtop:latest,ghcr.io/tibor309/webtop:ubuntu-cinnamon,tibordev/webtop:latest,tibordev/webtop:ubuntu-cinnamon" >> $GITHUB_OUTPUT
-          else
-            echo "TAGS=ghcr.io/tibor309/webtop:${{ inputs.branch }},tibordev/webtop:${{ inputs.branch }}" >> $GITHUB_OUTPUT
-          fi
-          echo "Image tag(s): $TAGS"
-
   get_date:
     name: Get current date in RFC 3339
     runs-on: ubuntu-latest
@@ -55,12 +24,12 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-latest
-    needs: [get_img_tags, get_date]
+    needs: get_date
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: 'main'
 
       - name: Login to GitHub container registry
         uses: docker/login-action@v3
@@ -91,4 +60,5 @@ jobs:
           build-args: |
             IMAGE_BUILD_DATE=${{ needs.get_date.outputs.IMG_DATE }}
           tags: |
-            ${{ needs.get_img_tags.outputs.image_tags }}
+            ghcr.io/tibor309/webtop:latest
+            tibordev/webtop:latest
