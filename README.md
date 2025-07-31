@@ -1,6 +1,6 @@
 [repo]: https://github.com/tibor309/webtop
 
-[dhub]: https://hub.docker.com/r/tibordev/brave
+[dhub]: https://hub.docker.com/r/tibordev/webtop
 [dcompose]: https://docs.linuxserver.io/general/docker-compose
 [dcli]: https://docs.docker.com/engine/reference/commandline/cli/
 [tz]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
