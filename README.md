@@ -21,17 +21,17 @@ Linux containers with full desktop environments accessible trough any modern web
 ## Desktops
 To use a desktop, simply change the Docker image tag.
 
-| Distro | Desktop Environment | Tech | Docker image tag |
+| Base Distro | Desktop Environment | Tech | Docker image tag |
 | :--- | :--- | :---: | :---: |
 | Debian | KDE Plasma | Selkies | `latest` |
 | Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
-| Ubuntu Vanilla | GNOME | KasmVNC | `ubuntu-vanilla` |
-| Kubuntu | KDE Plasma | Selkies | `kubuntu` |
-| Xubuntu | Xfce | KasmVNC | `xubuntu` ⚠ |
-| Ubuntu Cinnamon Remix | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
-| Zorin OS Core | Zorin OS Desktop | KasmVNC | `zorinos-core` |
-| Fedora KDE Plasma Desktop | KDE Plasma | Selkies | `fedora-kde` |
-| Fedora Xfce | Xfce | KasmVNC | `fedora-xfce` ⚠ |
+| Ubuntu | GNOME | KasmVNC | `ubuntu-vanilla` |
+| Ubuntu | KDE Plasma | Selkies | `kubuntu` |
+| Ubuntu | Xfce | KasmVNC | `xubuntu` ⚠ |
+| Ubuntu | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
+| Ubuntu | Zorin OS Desktop | KasmVNC | `zorinos-core` |
+| Fedora | KDE Plasma | Selkies | `fedora-kde` |
+| Fedora | Xfce | KasmVNC | `fedora-xfce` ⚠ |
 
 > [!WARNING]
 > The Ubuntu and Fedora Xfce desktops will be removed soon! Existing builds of the image are going to be still available on the GitHub container registry. If you use them, please migrate over to the [linuxserver.io image][lswebtop] or use another desktop.
