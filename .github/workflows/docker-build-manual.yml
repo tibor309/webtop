@@ -60,5 +60,5 @@ jobs:
           build-args: |
             IMAGE_BUILD_DATE=${{ needs.get_date.outputs.IMG_DATE }}
           tags: |
-            ghcr.io/tibor309/webtop:latest
+            ghcr.io/tibor309/webtop:ubuntu-cinnamon
             tibordev/webtop:ubuntu-cinnamon
