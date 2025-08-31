@@ -17,7 +17,7 @@ To use a desktop, simply change the Docker image tag.
 | Fedora | KDE Plasma | Selkies | `fedora-kde` ⚠ |
 
 > [!WARNING]
-> The GNOME and Fedora KDE Plasma desktops will be removed soon! Existing builds of the image are going to be still available on the GitHub container registry. If you use them, please migrate over to the [linuxserver.io image][lswebtop] or use another desktop.
+> The GNOME and Fedora KDE Plasma desktops will be removed soon! Existing builds of the image are going to be still available on the GitHub container registry. If you use them, please migrate over to the [linuxserver.io image](https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps) or use another desktop.
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods](https://github.com/linuxserver/docker-mods) and configurations to enable additional functionality within the container.
