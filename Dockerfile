@@ -39,19 +39,13 @@ RUN \
     kwin-addons \
     kwin-x11 \
     kdialog \
-    kfind \
     khotkeys \
     kio-extras \
     knewstuff-dialog \
     konsole \
     systemsettings \
     ksystemstats \
-    kcalc \
-    kwrite \    
     dolphin \
-    gwenview \
-    haruna \
-    kde-spectacle \
     firefox-esr && \
   echo "**** kde tweaks ****" && \
   sed -i \
