@@ -49,18 +49,5 @@ if [ ! -d $HOME/.config/kde.org ]; then
   ) &
 fi
 
-# Create startup script if it does not exist (keep in sync with openbox)
-STARTUP_FILE="${HOME}/.config/autostart/autostart.desktop"
-if [ ! -f "${STARTUP_FILE}" ]; then
-  echo "[Desktop Entry]" > $STARTUP_FILE
-  echo "Exec=bash /config/.config/openbox/autostart" >> $STARTUP_FILE
-  echo "Icon=dialog-scripts" >> $STARTUP_FILE
-  echo "Name=autostart" >> $STARTUP_FILE
-  echo "Path=" >> $STARTUP_FILE
-  echo "Type=Application" >> $STARTUP_FILE
-  echo "X-KDE-AutostartScript=true" >> $STARTUP_FILE
-  chmod +x $STARTUP_FILE
-fi
-
 # Stat DE
 exec dbus-launch --exit-with-session /usr/bin/startplasma-x11 > /dev/null 2>&1
