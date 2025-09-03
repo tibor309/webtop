@@ -11,7 +11,7 @@ To use a desktop, simply change the Docker image tag.
 | Debian | KDE Plasma | KasmVNC | `latest` |
 | Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
 | Ubuntu | GNOME | KasmVNC | `ubuntu-vanilla` ⚠ |
-| Ubuntu | KDE Plasma | Selkies | `kubuntu` |
+| Ubuntu | KDE Plasma | KasmVNC | `kubuntu` |
 | Ubuntu | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
 | Ubuntu | Zorin OS Desktop | KasmVNC | `zorinos-core` |
 | Fedora | KDE Plasma | Selkies | `fedora-kde` ⚠ |
