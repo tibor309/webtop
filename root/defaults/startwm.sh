@@ -63,5 +63,4 @@ if [ ! -f "${STARTUP_FILE}" ]; then
 fi
 
 # Stat DE
-unset LD_PRELOAD
-/usr/bin/dbus-launch /usr/bin/startplasma-x11 > /dev/null 2>&1
+exec dbus-launch --exit-with-session /usr/bin/startplasma-x11 > /dev/null 2>&1
