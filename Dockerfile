@@ -61,17 +61,11 @@ RUN \
     kdialog \
     kio-extras \
     knewstuff-dialog \
-    kfind \
     khotkeys \
     systemsettings \
     ksystemstats \
-    kwrite \
     konsole \
-    kcalc \
     dolphin \
-    gwenview \
-    haruna \
-    kde-spectacle \
     firefox && \
   echo "**** kde tweaks ****" && \
   sed -i \
