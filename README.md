@@ -8,7 +8,7 @@ To use a desktop, simply change the Docker image tag.
 
 | Base Distro | Desktop Environment | Tech | Docker image tag |
 | :--- | :--- | :---: | :---: |
-| Debian | KDE Plasma | Selkies | `latest` |
+| Debian | KDE Plasma | KasmVNC | `latest` |
 | Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
 | Ubuntu | GNOME | KasmVNC | `ubuntu-vanilla` ⚠ |
 | Ubuntu | KDE Plasma | Selkies | `kubuntu` |

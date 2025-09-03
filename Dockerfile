@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-selkies:debianbookworm
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 # set labels
 ARG IMAGE_BUILD_DATE
@@ -11,8 +11,8 @@ LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
 LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
 LABEL org.opencontainers.image.licenses="GPL-3.0"
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
-LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-selkies:debianbookworm"
-LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-selkies/blob/master/README.md"
+LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm"
+LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-kasmvnc/blob/master/README.md"
 
 # branding
 ENV LSIO_FIRST_PARTY=false
