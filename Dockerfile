@@ -27,13 +27,6 @@ ARG DEBIAN_FRONTEND="noninteractive"
 COPY /root/etc/apt/preferences.d/mozilla /etc/apt/preferences.d/mozilla
 
 RUN \
-  echo "**** add icon ****" && \
-  curl -o \
-    /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/ubuntu/icon.png && \
-  curl -o \
-    /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/ubuntu/favicon.ico && \
   echo "**** add package sources ****" && \
   curl -vSLo \
     /etc/apt/keyrings/packages.mozilla.org.asc \
