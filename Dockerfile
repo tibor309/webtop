@@ -64,6 +64,7 @@ RUN \
   apt-get remove -y \
     gnome-power-manager \
     gnome-bluetooth \
+    yelp \
     snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
