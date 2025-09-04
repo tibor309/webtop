@@ -55,19 +55,11 @@ RUN \
     gnome-shell \
     gnome-control-center \
     gnome-online-accounts \
-    gnome-text-editor \
     gnome-system-monitor \
     gnome-terminal \
-    gnome-calculator \
-    gnome-clocks \
-    gnome-calendar \
     nautilus \
     nautilus-extension-gnome-terminal \
-    firefox \
-    rhythmbox \
-    eog \
-    evince \
-    totem && \
+    firefox && \
     echo "**** remove un-needed packages ****" && \
     apt-get remove -y \
       gnome-power-manager \
