@@ -23,6 +23,9 @@ ENV TITLE="Zorin OS Core"
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 
+# prevent Ubuntu's firefox stub from being installed
+COPY /root/etc/apt/preferences.d/mozilla /etc/apt/preferences.d/mozilla
+
 # add zorin patches
 COPY /root/etc/apt/preferences.d/zorin-os-patches.pref /etc/apt/preferences.d/zorin-os-patches.pref
 COPY /root/etc/apt/preferences.d/zorinos-patches.pref /etc/apt/preferences.d/zorinos-patches.pref
@@ -45,13 +48,13 @@ RUN \
   echo \
     "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" \
     >> /etc/apt/sources.list.d/zorinos-patches.list && \
-  echo "**** add brave package sources ****" && \
+  echo "**** add mozilla package sources ****" && \
   curl -vSLo \
-    /usr/share/keyrings/brave-browser-archive-keyring.gpg \
-    https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
+    /etc/apt/keyrings/packages.mozilla.org.asc \
+    https://packages.mozilla.org/apt/repo-signing-key.gpg && \
   echo \
-    "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \ 
-    > /etc/apt/sources.list.d/brave-browser-release.list && \
+    "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" \
+    > /etc/apt/sources.list.d/mozilla.list && \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install --no-install-recommends -y \
@@ -74,25 +77,17 @@ RUN \
     gnome-online-accounts \
     gnome-system-monitor \
     gnome-terminal \
-    gnome-calculator \
-    gnome-clocks \
-    gnome-calendar \
     nautilus \
     nautilus-extension-gnome-terminal \
     zorin-appearance \
     zorin-appearance-layouts-shell-core \
-    alacarte \
-    brave-browser \
-    rhythmbox \
-    gedit \
-    eog \
-    evince \
-    totem && \
+    firefox && \
   echo "**** remove un-needed packages ****" && \
   apt-get remove -y \
     gnome-software \
     gnome-software-common \
     power-profiles-daemon \
+    yelp \
     snapd && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
