@@ -28,13 +28,6 @@ COPY /root/etc/apt/preferences.d/zorin-os-patches.pref /etc/apt/preferences.d/zo
 COPY /root/etc/apt/preferences.d/zorinos-patches.pref /etc/apt/preferences.d/zorinos-patches.pref
 
 RUN \
-  echo "**** add icon ****" && \
-  curl -o \
-    /kclient/public/icon.png \
-    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/zorin/icon.png && \
-  curl -o \
-    /kclient/public/favicon.ico \
-    https://raw.githubusercontent.com/tibor309/icons/refs/heads/main/zorin/favicon.ico && \
   echo "**** add zorin os package sources ****" && \
   curl -vSL \
     "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xb2228b8cca5c00a2c59d35e530fcf8f64f71b61c" | \
