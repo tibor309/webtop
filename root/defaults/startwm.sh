@@ -42,4 +42,4 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 xdg-user-dirs-update
 
 # Stat DE
-/usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
+exec dbus-launch --exit-with-session /usr/bin/gnome-shell --x11 -r > /dev/null 2>&1
