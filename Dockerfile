@@ -46,6 +46,7 @@ RUN \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
     fonts-ubuntu \
+    dbus-x11 \
     xdg-desktop-portal \
     ubuntucinnamon-environment \
     ubuntucinnamon-wallpapers \

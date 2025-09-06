@@ -34,4 +34,4 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 xdg-user-dirs-update
 
 # Start DE
-/usr/bin/cinnamon-session > /dev/null 2>&1
+exec dbus-launch --exit-with-session /usr/bin/cinnamon-session > /dev/null 2>&1
