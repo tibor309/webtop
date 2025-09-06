@@ -50,16 +50,8 @@ RUN \
     adwaita-icon-theme \
     gnome-system-monitor \
     gnome-terminal \
-    gnome-calculator \
-    gnome-calendar \
     nemo \
-    firefox \
-    rhythmbox \
-    gedit \
-    eog \
-    evince \
-    celluloid \
-    file-roller && \
+    firefox && \
   echo "**** remove un-needed packages ****" && \
   apt-get remove -y \
     snapd && \
