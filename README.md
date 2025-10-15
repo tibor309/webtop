@@ -6,18 +6,13 @@ Linux containers with full desktop environments accessible trough any modern web
 
 To use a desktop, simply change the Docker image tag.
 
-| Base Distro | Desktop Environment | Tech | Docker image tag |
-| :--- | :--- | :---: | :---: |
-| Debian | KDE Plasma | KasmVNC | `latest` |
-| Ubuntu | Ubuntu Desktop | KasmVNC | `ubuntu` |
-| Ubuntu | GNOME | KasmVNC | `ubuntu-vanilla` ⚠ |
-| Ubuntu | KDE Plasma | KasmVNC | `kubuntu` |
-| Ubuntu | Ubuntu Cinnamon Desktop | KasmVNC | `ubuntu-cinnamon` |
-| Ubuntu | Zorin OS Desktop | KasmVNC | `zorinos-core` |
-| Fedora | KDE Plasma | Selkies | `fedora-kde` ⚠ |
-
-> [!WARNING]
-> The GNOME and Fedora KDE Plasma desktops will be removed soon! Existing builds of the image are going to be still available on the GitHub container registry. If you use them, please migrate over to the [linuxserver.io image](https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps) or use another desktop.
+| Base Distro | Desktop Environment | Docker image tag |
+| :--- | :--- | :---: |
+| Debian 12 | KDE Plasma | `latest` |
+| Ubuntu 24.04 | Ubuntu Desktop | `ubuntu` |
+| Ubuntu 24.04 | KDE Plasma | `kubuntu` |
+| Ubuntu 22.05 | Ubuntu Cinnamon Desktop | `ubuntu-cinnamon` |
+| Ubuntu 24.04 | Zorin OS Desktop | `zorinos-core` |
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods](https://github.com/linuxserver/docker-mods) and configurations to enable additional functionality within the container.
