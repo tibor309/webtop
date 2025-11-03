@@ -1,4 +1,4 @@
-# 🖥️ [Webtop](https://github.com/tibor309/webtop)
+# 🖥️ Webtop
 
 Linux containers with full desktop environments accessible trough any modern web browser.
 
@@ -16,9 +16,6 @@ To use a desktop, simply change the Docker image tag.
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods](https://github.com/linuxserver/docker-mods) and configurations to enable additional functionality within the container.
-
-> [!NOTE]
-> This image is also available on [Docker Hub](https://hub.docker.com/r/tibordev/webtop) at `tibordev/webtop`.
 
 ### [docker-compose](https://docs.linuxserver.io/general/docker-compose) (recommended)
 
@@ -95,7 +92,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 
 ## Updating
 
-This image is not always up to date. To update or install packages, use the desktop's package manager. You can read more about persistent apps below. It is recommended to pull the latest image and redeploy theontainer once in a while to update your configured mods.
+This image is not always up to date. To update or install packages, use the desktop's package manager. You can read more about persistent apps below. It is recommended to pull the latest image and redeploy the container once in a while to update your configured mods.
 
 ## Applications
 
