@@ -1,4 +1,4 @@
-name: "Build Docker image"
+name: "Build image"
 on:
   [workflow_dispatch]
 
@@ -7,41 +7,21 @@ permissions:
   packages: write
 
 jobs:
-  get_date:
-    name: Get current date in RFC 3339
-    runs-on: ubuntu-latest
-    outputs:
-      IMG_DATE: ${{ steps.date.outputs.IMG_DATE }}
-    steps:
-      - name: Get current date in RFC 3339
-        id: date
-        run: |
-          IMG_DATE=$(date --rfc-3339=seconds | sed 's/ /T/')
-          echo "IMG_DATE=${IMG_DATE}" >> $GITHUB_OUTPUT
-          echo "The date is $IMG_DATE"
-
-  build_push:
+  build:
     name: Build and push image
     runs-on: ubuntu-latest
-    needs: get_date
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: 'kubuntu'
 
-      - name: Login to GitHub container registry
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -57,7 +37,6 @@ jobs:
           file: ./Dockerfile
           push: true
           build-args: |
-            IMAGE_BUILD_DATE=${{ needs.get_date.outputs.IMG_DATE }}
+            IMAGE_BUILD_DATE=$(date --rfc-3339=seconds | sed 's/ /T/')
           tags: |
             ghcr.io/${{ github.repository_owner }}/webtop:kubuntu
-            ${{ vars.DOCKERHUB_USERNAME }}/webtop:kubuntu
