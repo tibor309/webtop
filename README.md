@@ -11,8 +11,11 @@ To use a desktop, simply change the Docker image tag.
 | Debian 12 | KDE Plasma | `latest` |
 | Ubuntu 24.04 | Ubuntu Desktop | `ubuntu` |
 | Ubuntu 24.04 | KDE Plasma | `kubuntu` |
-| Ubuntu 22.05 | Ubuntu Cinnamon Desktop | `ubuntu-cinnamon` |
-| Ubuntu 24.04 | Zorin OS Desktop | `zorinos-core` |
+| Ubuntu 22.04 | ⚠️ Ubuntu Cinnamon Desktop | `ubuntu-cinnamon` |
+| Ubuntu 22.04 | Zorin OS Desktop | `zorinos-core` |
+
+> [!WARNING]
+> * The Ubuntu Cinnamon Desktop will be removed soon! Please migriate over another desktop!
 
 ## Setup
 To set up the container, you can use docker-compose or the docker cli. Unless a parameter is flagged as 'optional', it is *mandatory* and a value must be provided. This container is using a linuxserver.io base, so you can use their [mods](https://github.com/linuxserver/docker-mods) and configurations to enable additional functionality within the container.
