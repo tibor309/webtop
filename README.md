@@ -12,7 +12,7 @@ To use a desktop, simply change the Docker image tag.
 | Ubuntu 24.04 | Ubuntu Desktop | `ubuntu` |
 | Ubuntu 24.04 | KDE Plasma | `kubuntu` |
 | Ubuntu 22.04 | ⚠️ Ubuntu Cinnamon Desktop | `ubuntu-cinnamon` |
-| Ubuntu 22.04 | Zorin OS Desktop | `zorinos-core` |
+| Ubuntu 24.04 | Zorin OS Desktop | `zorinos-core` |
 
 > [!WARNING]
 > * The Ubuntu Cinnamon Desktop will be removed soon! Please migriate over another desktop!
