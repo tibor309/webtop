@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
 
 # set labels
 ARG IMAGE_BUILD_DATE
@@ -9,9 +9,8 @@ LABEL org.opencontainers.image.title="Webtop"
 LABEL org.opencontainers.image.description="Linux desktop accessible trough a web browser."
 LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
 LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
-LABEL org.opencontainers.image.licenses="GPL-3.0"
-LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
-LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy"
+LABEL org.opencontainers.image.vendor="tibor309"
+LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble"
 LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-kasmvnc/blob/master/README.md"
 
 # branding
@@ -37,16 +36,16 @@ RUN \
     gpg --dearmor | \
     tee -a /usr/share/keyrings/zorinos-archive-keyring.gpg && \
   echo \
-    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" \
+    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu noble main" \
     > /etc/apt/sources.list.d/zorinos-stable.list && \
   echo \
-    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu jammy main" \
+    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/stable/ubuntu noble main" \
     >> /etc/apt/sources.list.d/zorinos-stable.list && \
   echo \
-    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" \
+    "deb [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu noble main" \
     > /etc/apt/sources.list.d/zorinos-patches.list && \
   echo \
-    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu jammy main" \
+    "deb-src [signed-by=/usr/share/keyrings/zorinos-archive-keyring.gpg] https://ppa.launchpadcontent.net/zorinos/patches/ubuntu noble main" \
     >> /etc/apt/sources.list.d/zorinos-patches.list && \
   echo "**** add mozilla package sources ****" && \
   curl -vSLo \
