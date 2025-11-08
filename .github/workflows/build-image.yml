@@ -7,8 +7,20 @@ permissions:
   packages: write
 
 jobs:
+  date:
+    name: Get current date in RFC 3339
+    runs-on: ubuntu-latest
+    outputs:
+      date: ${{ steps.date.outputs.date }}
+    steps:
+      - name: Get current date in RFC 3339
+        id: date
+        run: |
+          echo "date=$(date --rfc-3339=seconds | sed 's/ /T/')" >> $GITHUB_OUTPUT
+
   build:
     name: Build and push image
+    needs: date
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -37,6 +49,10 @@ jobs:
           file: ./Dockerfile
           push: true
           build-args: |
-            IMAGE_BUILD_DATE=$(date --rfc-3339=seconds | sed 's/ /T/')
+            IMAGE_BUILD_DATE=${{ needs.date.outputs.date }}
+          labels: |
+            org.opencontainers.image.ref.name=${{ github.ref }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=latest
           tags: |
             ghcr.io/${{ github.repository_owner }}/webtop:latest
