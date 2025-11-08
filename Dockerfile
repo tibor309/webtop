@@ -5,7 +5,7 @@ ARG IMAGE_BUILD_DATE
 LABEL maintainer="tibor309"
 LABEL org.opencontainers.image.authors="tibor309"
 LABEL org.opencontainers.image.created="${IMAGE_BUILD_DATE}"
-LABEL org.opencontainers.image.description="Linux desktop accessible trough a web browser."
+LABEL org.opencontainers.image.description="Linux desktop accessible through a web browser."
 LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
 LABEL org.opencontainers.image.licenses="GPL-3.0-only"
 LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
