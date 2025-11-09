@@ -59,7 +59,7 @@ jobs:
           labels: |
             org.opencontainers.image.ref.name=${{ github.ref }}
             org.opencontainers.image.revision=${{ github.sha }}
-            org.opencontainers.image.version=latest
+            org.opencontainers.image.version=ubuntu
           tags: |
             ghcr.io/${{ github.repository_owner }}/webtop:ubuntu
             ${{ vars.DOCKERHUB_USERNAME }}/webtop:ubuntu
