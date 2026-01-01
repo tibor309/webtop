@@ -2,8 +2,6 @@
 
 [Ubuntu Desktop](https://ubuntu.com/desktop) is a popular open-source operating system designed for personal computers and laptops. It offers a user-friendly interface and a wide range of software options, making it suitable for both new and experienced users.
 
-![ubuntu](https://github.com/user-attachments/assets/9d8e0d79-d997-45c9-a955-81f6356ae3b7)
-
 ## Setup
 
 > [!WARNING]
