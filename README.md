@@ -2,8 +2,6 @@
 
 [Zorin OS](https://zorin.com/os/) is a Linux distribution based on Ubuntu, designed to provide a user-friendly experience for individuals transitioning from Windows or macOS.
 
-![zorinos-core](https://github.com/user-attachments/assets/15af73a7-94b3-46c3-a458-1ae4eeb2cc2e)
-
 ## Setup
 
 > [!WARNING]
