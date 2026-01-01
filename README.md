@@ -2,7 +2,7 @@
 
 Linux containers with full desktop environments accessible trough any modern web browser using KasmVNC.
 
-![webtop](.github/webtop.png)
+![webtop](.github/preview.png)
 
 ## Desktops
 
