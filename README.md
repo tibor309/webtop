@@ -10,4 +10,4 @@
 > * The GNOME desktop environment is a bit unstable in this configuration.
 > * Desktop themes might not work correctly. You can fix this, by creating your own gtk3 and gtk4 configs.
 
-To use this desktop, change the docker image tag to `ubuntu`. For setup options and configuration, check the [main page](https://github.com/tibor309/webtop?tab=readme-ov-file#setup).
+To use this desktop, change the docker image tag to `ubuntu`. For setup options and configuration, check the [documentation](https://github.com/tibynx/webtop?tab=readme-ov-file#setup).
