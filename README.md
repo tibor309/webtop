@@ -22,7 +22,7 @@ To set up the container, you can use docker-compose or the docker cli. Unless a 
 ---
 services:
   webtop:
-    image: ghcr.io/tibor309/webtop:latest
+    image: ghcr.io/tibynx/webtop:latest
     container_name: webtop
     security_opt:
       - seccomp:unconfined #optional
@@ -62,7 +62,7 @@ docker run -d \
   --device /dev/dri:/dev/dri `#optional` \
   --shm-size="1gb" `#optional` \
   --restart unless-stopped \
-  ghcr.io/tibor309/webtop:latest
+  ghcr.io/tibynx/webtop:latest
 ```
 
 ## Security

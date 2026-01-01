@@ -2,16 +2,16 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 # set labels
 ARG IMAGE_BUILD_DATE
-LABEL maintainer="tibor309"
-LABEL org.opencontainers.image.authors="tibor309"
+LABEL maintainer="tibynx"
+LABEL org.opencontainers.image.authors="tibynx"
 LABEL org.opencontainers.image.created="${IMAGE_BUILD_DATE}"
 LABEL org.opencontainers.image.description="Linux desktop accessible through a web browser."
-LABEL org.opencontainers.image.documentation="https://github.com/tibor309/webtop/blob/main/README.md"
+LABEL org.opencontainers.image.documentation="https://github.com/tibynx/webtop/blob/main/README.md"
 LABEL org.opencontainers.image.licenses="GPL-3.0-only"
-LABEL org.opencontainers.image.source="https://github.com/tibor309/webtop"
+LABEL org.opencontainers.image.source="https://github.com/tibynx/webtop"
 LABEL org.opencontainers.image.title="Webtop"
-LABEL org.opencontainers.image.url="https://github.com/tibor309/webtop/packages"
-LABEL org.opencontainers.image.vendor="tibor309"
+LABEL org.opencontainers.image.url="https://github.com/tibynx/webtop/packages"
+LABEL org.opencontainers.image.vendor="tibynx"
 LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm"
 LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-kasmvnc/blob/master/README.md"
 
