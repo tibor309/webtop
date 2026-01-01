@@ -2,6 +2,8 @@
 
 Linux containers with full desktop environments accessible trough any modern web browser using KasmVNC.
 
+![webtop](.github/webtop.png)
+
 ## Desktops
 
 To use a desktop, simply change the Docker image tag.
