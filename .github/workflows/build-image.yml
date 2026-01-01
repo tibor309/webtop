@@ -8,15 +8,17 @@ permissions:
 
 jobs:
   date:
-    name: Get current date in RFC 3339
+    name: Get current date
     runs-on: ubuntu-latest
     outputs:
       date: ${{ steps.date.outputs.date }}
+      tag: ${{ steps.date.outputs.tag }}
     steps:
-      - name: Get current date in RFC 3339
+      - name: Get current date
         id: date
         run: |
           echo "date=$(date --rfc-3339=seconds | sed 's/ /T/')" >> $GITHUB_OUTPUT
+          echo "tag=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_OUTPUT
 
   build:
     name: Build and push image
@@ -62,4 +64,7 @@ jobs:
             org.opencontainers.image.version=kubuntu
           tags: |
             ghcr.io/${{ github.repository_owner }}/webtop:kubuntu
+            ghcr.io/${{ github.repository_owner }}/webtop:kubuntu-${{ needs.date.outputs.tag }}
             ${{ vars.DOCKERHUB_USERNAME }}/webtop:kubuntu
+            ${{ vars.DOCKERHUB_USERNAME }}/webtop:kubuntu-${{ needs.date.outputs.tag }}
+
