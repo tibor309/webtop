@@ -73,7 +73,7 @@ By default, this container has no authentication. Configure the optional environ
 
 ## Config
 
-Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate `<external>:<internal>` respectively. For example, `-p 8080:80` would expose port `80` from inside the container to be accessible from the host's IP on port `8080` outside the container. Further options can be found on the [Selkies Base Images](https://github.com/linuxserver/docker-baseimage-selkies#options) or the [KasmVNC Base Images](https://github.com/linuxserver/docker-baseimage-kasmvnc#options) repo.
+Containers are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate `<external>:<internal>` respectively. For example, `-p 8080:80` would expose port `80` from inside the container to be accessible from the host's IP on port `8080` outside the container. Further options can be found on the [KasmVNC Base Images](https://github.com/linuxserver/docker-baseimage-kasmvnc#options) repo.
 
 
 | Parameter | Function |
@@ -103,9 +103,9 @@ There are two methods for installing applications inside the container: PRoot Ap
 
 Natively installed packages (e.g., via `apt-get install`) will not persist if the container is recreated. To retain applications and their settings across container updates, use [proot-apps](https://github.com/linuxserver/proot-apps). These are portable applications installed to the user's persistent `$HOME` directory.
 
-To install an application, use the command line inside the container, or the Apps menu in the Selkies sidebar. A list of supported applications is available [here](https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps).
+To install an application, use the command line inside the container. A list of supported applications is available [here](https://github.com/linuxserver/proot-apps?tab=readme-ov-file#supported-apps).
 
-```
+```bash
 proot-apps install filezilla
 ```
 
