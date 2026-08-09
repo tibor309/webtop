@@ -9,8 +9,8 @@ Linux containers with full desktop environments accessible trough any modern web
 To use a desktop, simply change the Docker image tag.
 
 > [!WARNING]
-> Webtops will not receive further upgrades. Meaning Ubuntu based webtops will not be upgraded to Ubuntu 26.4, etc. KasmVNC base images stopped receiving updates and have been retired by Linuxserver.io.
-> For more information, read the [blog](https://www.linuxserver.io/blog/spring-cleaning-new-images-and-rebasing#deprecation-of-rdesktop-and-associated-base-images). If you want to keep using the project, I suggest migrating to the new [Selkies-based webtops](https://github.com/linuxserver/docker-webtop).
+> Webtops will not receive further desktop upgrades. Meaning Ubuntu based webtops will not be upgraded to Ubuntu 26.04, etc. KasmVNC base images stopped receiving updates and have been retired by Linuxserver.io.
+> For more information, read their [blog post](https://www.linuxserver.io/blog/spring-cleaning-new-images-and-rebasing#deprecation-of-rdesktop-and-associated-base-images). If you want to keep using the project, I suggest migrating to the new [Selkies-based webtops](https://github.com/linuxserver/docker-webtop).
 
 | Base Distro | Desktop Environment | Docker image tag |
 | :--- | :--- | :---: |
