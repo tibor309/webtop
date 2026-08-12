@@ -2,15 +2,14 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble
 
 # set labels
 ARG IMAGE_BUILD_DATE
-LABEL maintainer="tibynx"
 LABEL org.opencontainers.image.authors="tibynx"
 LABEL org.opencontainers.image.created="${IMAGE_BUILD_DATE}"
 LABEL org.opencontainers.image.description="Linux desktop accessible through a web browser."
-LABEL org.opencontainers.image.documentation="https://github.com/tibynx/webtop-kasmvnc/blob/main/README.md"
+LABEL org.opencontainers.image.documentation="https://github.com/tibynx/docker-webtop-kasmvnc/blob/main/README.md"
 LABEL org.opencontainers.image.licenses="GPL-3.0-only"
-LABEL org.opencontainers.image.source="https://github.com/tibynx/webtop-kasmvnc"
+LABEL org.opencontainers.image.source="https://github.com/tibynx/docker-webtop-kasmvnc"
 LABEL org.opencontainers.image.title="Webtop"
-LABEL org.opencontainers.image.url="https://github.com/tibynx/webtop-kasmvnc/packages"
+LABEL org.opencontainers.image.url="https://github.com/tibynx/docker-webtop-kasmvnc/packages"
 LABEL org.opencontainers.image.vendor="tibynx"
 LABEL org.opencontainers.image.base.name="ghcr.io/linuxserver/baseimage-kasmvnc:ubuntunoble"
 LABEL org.opencontainers.image.base.documentation="https://github.com/linuxserver/docker-baseimage-kasmvnc/blob/master/README.md"
