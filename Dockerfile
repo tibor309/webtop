@@ -24,6 +24,10 @@ ENV TITLE="Debian KDE"
 ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN \
+  echo "**** add branding ****" && \
+  curl --create-dirs -o \
+    /etc/s6-overlay/s6-rc.d/init-adduser/branding \
+    https://raw.githubusercontent.com/tibynx/tibynx/refs/heads/main/branding && \
   echo "**** install packages ****" && \
   apt-get update -y && \
   apt-get install --no-install-recommends -y \
